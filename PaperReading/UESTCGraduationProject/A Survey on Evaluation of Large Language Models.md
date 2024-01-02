@@ -84,3 +84,25 @@ Divde existing tasks into the following categories:
 - other applications
 
 ### Natural Language Processing Tasks
+
+The initial objective behind the development of language models, particularly large language models, was to enhance performance on natural language processing tasks, enccompassing both understanding and generation.
+
+#### Natural language understanding
+
+1. **Sentiment analysis** is a task that analyzes and interprets the text to determine the emotional inclination.
+    LLMs have demonstrated commendable performaance in sentiment analysis tasks, but the abilty of ChatGPT to understand low-resource languages is limited.
+
+2. **Text classification** not only focuses on sentiment, but also includes the processing of all texts and tasks.
+    LLMs perform well on text classification task and can even handle text classificatioin tasks in unconventional problem settings as weell.
+
+3. **Natural language inference(NLI)** is the task of determining whether the given "hypothesis" logically follows from the "premise".
+
+4. **Semantic understanding** refers to the meaning or underrstanding of language and its associated concepts.
+    The performance of LLMs in semantic understanding tasks is poor.
+
+
+
+
+
+
+
