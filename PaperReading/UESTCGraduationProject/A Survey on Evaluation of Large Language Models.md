@@ -100,6 +100,14 @@ The initial objective behind the development of language models, particularly la
 4. **Semantic understanding** refers to the meaning or underrstanding of language and its associated concepts.
     The performance of LLMs in semantic understanding tasks is poor.
 
+#### Reasoning
+
+The reasoning performance of ChatGPT is different.
+
+#### Natural language generation
+
+NLG evaluates the capabilities of LLMs in generating specific texts, which consists of several tasks, including summarization, dialogue generation, machine translation, question answering, and other open-ended generation tasks.
+
 
 
 
