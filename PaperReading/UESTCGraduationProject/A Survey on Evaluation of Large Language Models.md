@@ -108,9 +108,14 @@ The reasoning performance of ChatGPT is different.
 
 NLG evaluates the capabilities of LLMs in generating specific texts, which consists of several tasks, including summarization, dialogue generation, machine translation, question answering, and other open-ended generation tasks.
 
+***Summarization*** is a generation task that aims to learn a concise abstract for the given sentence.
 
+***Question answering*** is a crucial technology in the field of human-computer interaction, and it has found wide application in scenarios like serach engines, intelligent customer service, and QA systems.
 
+### Multilingual tasks
 
+While English is the predeminant language, many LLMs are trained on mixed-language training data.
 
+### Factuality
 
-
+Factuality in the context of LLMs refers to the extent to which the information or answers provided by the model align with real-world truths and verifiable facts.(avoid factual hallucination)
