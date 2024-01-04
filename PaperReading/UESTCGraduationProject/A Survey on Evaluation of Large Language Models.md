@@ -119,3 +119,71 @@ While English is the predeminant language, many LLMs are trained on mixed-langua
 ### Factuality
 
 Factuality in the context of LLMs refers to the extent to which the information or answers provided by the model align with real-world truths and verifiable facts.(avoid factual hallucination)
+
+### Robustness, Ethic, Bias, and Trustworthiness
+
+#### Robustness
+
+Robustness studies the stability of a system when facing unexpected inputs.
+
+- out-of-distribution robustness
+- adversarial robustness
+
+#### Ethic and bias
+
+LLMs may magnify harmful information existing in the crawled training corpora.
+
+#### Trustworthiness
+
+The information generated can include inaccuracies or statements ungrounded in reality, a phenomenon known as hallucination.
+
+### Social Science
+
+The output produced by LLMs serve as valuable resources for enhancing productivity. However, it is crucial tp acknowledge that existing LLMs cannot completely replace human professionals in this domain.
+
+### Natural Science and Endineering
+
+#### Mathematics
+
+LLMs lack the capability to engage in mathematical research.
+
+#### General science
+
+#### Engineering
+
+- Code generation tasks
+  
+    ChatGPT has developed superior skills in dynamic programming, greedy algorithm, and search, but it struggles in data structure, tree, and graphy theoty.
+
+- Software Engineering
+- Commonsnese planning tasks 
+    LLMs can handle simple engineering tasks, but they perform poorly on complex engineering tasks.
+
+### Medical Application
+
+- Medical query
+- Medical examination
+- Medical assistants
+
+
+## Where to evaluate: datasets and benchmarks
+
+- Benchmarks for General tasks
+    - Chatbot Arena
+    - MT-Bench
+
+-  Benchmarks for Specific Downstream tasks
+-  Benchmarks for Multi-modal tasks
+
+## How to evaluate
+
+- automatic evaluation
+- human evaluation
+
+### automatic evaluation
+
+automatic evaluation uses metrics or indicators and evaluation tools to assess the performance of models, such as accuracy, BLEU, ROUGE..
+
+### human evaluation
+
+Human evaluation becomes a natural choice in some non-standard cases where automatic evaluation is not suitable, for instance, in open-generation tasks
