@@ -298,4 +298,24 @@ characteristic equation
   - Method of indeterminate coefficient
 
 ***Structure of solution for inhomogeneous equation***
+- Theorem:
+  - Assume solution $u_{(x)}$ for $u^{''} + au^{'} + bu = 0$ and particular solution $y_p(x)$ for $y^{''} + ay^{'} + by = r_{(x)}$
+  - General solution for $y^{''} + ay^{'} + by = r(x)$ is $y(x) = y_p(x) + u(x)$
+- Proof:
+  - Calculate differential for $y(x)+u(x)$
+    - 1st order diff: $(y(x) + u(x))^{'} = y^{'}(x) + u^{'}(x)$
+    - 2nd order diff: $(y(x) + u(x))^{''} = y^{''}(x) + u^{''}(x)$ 
+    - y(x) is general solution; u(x) is solution for homogeneous
+  -  y(x) + u(x) is also the solution for `{eq.2.12}`
+     -  $(y+u)^{''} + a(y+u)^{'} + b(y+u) = y^{''} + ay^{'} by + u^{''} + au^{'} + bu = r(x)$
+  -  Next, assume $y_1(x) - y_2(x)$ is solution for inhomogeneous equation `{eq.2.1}`
+     -  $(y_1 - y_2)^{''} + a(y_1 - y_2)^{'} + b(y_1 - y_2) = (y^{''}_1 + ay^{'}_1 + by_1) - (y^{''}_2 + ay^{'}_2 + by_2) = r(x) - r(x) = 0$
+- $y(x) = y_p(x) + u(x)$
+  - General solution for inhomogeneous equation y(x) is sum of particular solution for inhomogeneous $y_p(x)$ and general solution for homogenesis u(x)
 
+- General solution for inhomogeneous equation
+  - $y(x) = y_p(x) + u(x)$
+  - Need particular solution for inhomogeneous eq. $u(x)$
+- We can calculate solution for inhomogeneous eq. with sum assumption
+  - Method of indeterminate coefficient
+  - Variation of constants need to calculate array
