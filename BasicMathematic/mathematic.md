@@ -2,7 +2,6 @@
 
 **Content**
 
-> - Differential equations
 > - Differential equations and physics
 > - Array and vector
 > - Vector analysis
@@ -192,4 +191,111 @@
                 2. $y = \frac{\int (x^2 + 2x)xdx +c_1}{x} = \frac{x^3}{4} + \frac{2x^2}{3} + \frac{c_2}{x}$
        -  by Method of indeterminate coefficient
           -  $2y^{'} + 3y = 3x^2 + x$
+               - Assuming the particular solution: $y_p = \alpha x^2 + \beta x + \gamma$
+               - Substitute: $2(2\alpha x + \beta ) + 3(\alpha x^2 + \beta x + \gamma) = 3x^2 + x \\ 3\alpha =3, 4\alpha + 3\beta = 1, 2\beta + 3\gamma = 0 \\ \alpha =1, \beta = -1, \gamma = \frac{2}{3}$
+               - $f_{(x)} = \frac{3}{2}, F_{(x)} = \frac{3}{2}x$
+               - particular solution: $ y_p = x^2 -x + \frac{2}{3}$
+               - general solution: $y_p = x^2 -x + \frac{2}{3} + ce^{-\frac{3}{2}x}$ `{c: const}`
           -  $y^{'} + 4y = 3e^{-x}$
+             -  $y_p = \alpha e^{-x}$
+             -  $ - \alpha e^{-x} + 4\alpha e^{-x} = 3 e^{-x}, \alpha = 1$
+             -  $f_{(x)} = 4 , F_{(x)} = 4x$
+             -  $y_p = e^{-x}, y = e^{-x} + ce^{-4x}$
+
+***Euler's formula***
+- The trigonometric functions (sin cos) and complex exponential function satisfy following relationship
+  - $e^{ix} = \cos x + i\sin x$
+  - 𝑒: base of natural logarithm, 𝑖(or 𝑗): imaginary unit
+- Euler’s formula is useful for circuit analysis, cause
+  - Easy to take integral, differential
+    - $\frac{d}{dx}e^{\lambda x} = \lambda e^{\lambda x}, \int e^{\lambda x}dx = \frac{1}{\lambda}e^{\lambda x } + c$ `{c: constant}`
+    - Phasor: expression of sine func. in complex exponent
+      - $A\cos wx = \Re{A \cos wx + i A\sin wx}$
+      - Calculate circuit in complex exponent, then convert to original sine functions
+
+***2nd order differential equation***
+- Introduce 2nd order differential equation
+  - $y^{''} + a y^{'} + by = r_{(x)}$`{a, b are constants, eq.3.1}`
+    - If $r_{(x)} = 0$, `{eq.3.1}` is homogeneous
+    - If $r_{(x)} \neq 0$, `{eq.3.1}` is inhomogeneous
+- Inhomogeneous form is very tough for hand calculation
+  - If 𝑟(𝑥) is constant, sine, or exponential we can use method of indeterminate coefficient
+    -  In physics, circuits, we can use this assumption
+
+***Characteristic equation***
+- If $r_{(x)} = 0 \text{ and } y_{(x)} = ce^{\lambda x}$ (c, &lambda; : constant), `eq.3.1` is
+  - $y^{''} + ay^{'} + by = (\lambda ^2 + a\lambda + b)ce^{\lambda x} = 0 , ce^{\lambda x} \neq 0$ thus
+    - $\lambda ^2 + a\lambda + b = 0 : \text{ characteristic equation}$
+  - Solution and $ \lambda = \frac{-a \pm \sqrt{a^2 -4b}}{2}$ changes depend on discriminant function $(a^2 -4b)$
+    - $a^2 -4b > 0: \lambda _1, \lambda _2 $ in real. Solutions: $c_1e^{\lambda x}, c_2e^{\lambda x}$
+    - $a^2 -4b = 0: \lambda = -\frac{a}{2}$. Solutions: $c_1e^{\lambda x}, c_2xe^{\lambda x}$ 
+    - $a^2 -4b < 0: \lambda _1, \lambda _2$ in imaginary value.
+      - $\lambda _1 = \alpha + i\beta, \lambda _2 = \alpha - i\beta$
+      - Solutions: $c_1e^{\lambda x}, c_2e^{\lambda x}$
+
+***Linearity of solution***
+- Use linearity  of solution
+- Theorem: if y~(x)~ and w~(x)~ are the solution of linear equation `{eq.3.1}`, sum $c_1y_{(x)} + c_2w_{(x)}$ is also the solution
+- Proof: since y~(x)~ and w~(x)~ are the solution, it should satisfy
+  - $y^{''} + ay^{'} + by = 0, w^{''} + aw^{'} + bw = 0,$
+  - Multiply const c~1~ and c~2~ and get its sum
+    - $c_1y^{''} + c_1ay^{'} + c_1by + c_2w^{''} + c_2aw^{'} + c_2bw = 0 $
+  - $(c_1y+c_2w)^{''} + a(c_1y+c_2w)^{'}+b(c_1y+c_2w) = 0$
+  - So, $c_1y_{(x)} + c_2w_{(x)}$ is also the solution
+- Solution is the sum of exponents, comes from
+characteristic equation
+
+***General solution***
+- Theorem: General solution of 2nd order homogeneous differential equation is
+  - $a^2 - 4b = 0: y_{(x)} = c_1e^{\lambda _1 x} + c_2xe^{\lambda _1 x}, \lambda_1 \text{: multiple root of char. eq}$ 
+  - $a^2 - 4b \neq 0: y_{(x)} = c_1e^{\lambda _1 x} + c_2e^{\lambda _2 x}, \lambda_1, \lambda_2 \text{: roots of char. eq}$
+- Proof: if 𝑦(𝑥) is the solution of `{eq.3.1}`, multiply 𝑒^−𝜆𝑥^
+  - $e^{-\lambda x}y^{''} + e^{-\lambda x}ay^{'} + e^{-\lambda x}by = 0$
+  - $(e^{-\lambda x}y)^{''} + (a + 2\lambda)(e^{-\lambda x}y)^{'} + (\lambda ^2 + a\lambda +b)e^{-\lambda x}y = 0$
+    - If we assume 𝜆1 is root of char. eq., $\lambda_1 ^2 + a\lambda_1 +b = 0$, thus
+    - $(e^{-\lambda x}y)^{''} + (a + 2\lambda)(e^{-\lambda x}y)^{'} = 0$
+  - $u^{''} + (a+2\lambda_1)u^{'} = 0$, when $e^{-\lambda x}y_{(x)} = u_{(x)}$
+    - Case $a^2 - 4b =0 : \lambda = -\frac{a}{2}, \text{thus} u^{''} = 0$
+      - $u(x) = c_1 + c_2 x, \text{ thus } y_{(x)} = c_1e_{\lambda_1 x} + c_2xe^{\lambda_1 x}$
+      - Case $a^2 - 4b \neq 0:$
+        - $v^{'} + (a + 2\lambda_1)v = 0, \text{when} v = u^{'}, $ solve this then
+        - $v = Ce^{-(a+2\lambda_1)x}$, C is constant. Then integrate this 
+          - $u_{(x)} = c_1 - \frac{C}{a+2\lambda_1}e^{-(a+2\lambda_1)x}$, thus
+          - $y = c_1e^{\lambda_1 x} - c_2e^{\lambda_2x}$, since (a + &lambda;~1~) si the solution &lambda;~2~. $(c_2 = \frac{C}{a+2\lambda_1}, \lambda_2 = a + \lambda_1)$
+  - Transform from/to sine to/from exponent
+    - Case $(a^2 - 4b < 0):$
+    - $y_{(x)} = c_1e^{(A+iB)x} + c_2e^{(A-iB)x}$
+    - $y_{(x)} = c_1e^{Ax}(\cos Bx + i\sin Bx) + c_2e^{Ax}(\cos Bx - i\sin Bx)$
+      - $= (c_1 + c_2) e^{Ax}\cos Bx + i(c_1 - c_2)e^{Ax}\sin Bx$
+      - $= d_1e^{Ax}\cos Bx + d_2 e^{Ax}\sin Bx$
+
+***Exercise(2)***
+
+- Solve characteristic equation and general solutions for following equations
+  - by Method of indeterminate coefficient
+    - $y^{''} + 2y^{'} + y = 0$
+      - since r~(x)~ = 0, assume $y = ce^{\lambda x}. c, \lambda :$ unknown 
+      - $(\lambda ^2 + 2\lambda +1)ce^{\lambda x} = 0$
+      - characteristic. eq $\lambda ^2 + 2\lambda + 1 = 0 \rightarrow \lambda = -1$
+      - general solution: $y = c_1e^{-x} + c_2 xe^{-x}$
+    - $y^{''} + 2y^{'} + 3y = 0$
+      - since r~(x)~ = 0, assume $y = ce^{\lambda x}. c, \lambda :$ unknown 
+      - $(\lambda ^2 + 2\lambda +3)ce^{\lambda x} = 0$
+      - characteristic. eq $\lambda ^2 + 2\lambda + 3 = 0 \rightarrow \lambda = -1 \pm \sqrt{2}i$
+      - general solution: $y = c_1e^{-(1+\sqrt{2}i)x} + c_2e^{-(1-\sqrt{2}i)x}$
+    - $y^{''} - 4y^{'} - 5y = 0$
+      - characteristic. eq $\lambda ^2 - 4\lambda - 5 = 0 \rightarrow \lambda = -1, 5$
+      - general solution: $y = c_1e^{5x} +c_2e^{-x}$`{c1, c2: constant}` 
+
+***2nd order differential equation***
+- Introduce 2nd order differential equation
+  - $y^{''} + ay^{'} + by = r_{(x)}$ (a, b are constants)`{eq.2.12}`
+    - If r(x) = 0, `{eq.2.12}` is homogeneous `{eq.2.2}`
+    - If r(x) &ne; 0, `{eq.2.12}` is inhomogeneous `
+- Inhomogeneous form is very tough for hand calculation
+  - If 𝑟(𝑥) is constant, sine, or exponential we can use **method of indeterminate coefficient**
+  - Variation of constants
+  - Method of indeterminate coefficient
+
+***Structure of solution for inhomogeneous equation***
+
