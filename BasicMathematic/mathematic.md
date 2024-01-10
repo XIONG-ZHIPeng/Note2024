@@ -2,8 +2,8 @@
 
 **Content**
 
-> - Differential equations and physics
-> - Array and vector
+> - [Differential equations and physics](#differential-equation)
+> - [Array and vector](#array-and-vector)
 > - Vector analysis
 > - Complex function theory
 > - Fourier transform
@@ -319,3 +319,201 @@ characteristic equation
 - We can calculate solution for inhomogeneous eq. with sum assumption
   - Method of indeterminate coefficient
   - Variation of constants need to calculate array
+  
+***Method of indeterminate coefficient(exponent)***
+- Solve general solution 𝑦(𝑥) of : $y^{''} + y^{'} +2y = e^{2x}$
+  - Get general solution $Y_0(x)$ for homogeneous equation
+    - $y^{''} + y^{'} +2y = 0$
+    - Its characteristic equation:
+      - $\lambda ^2 + 3\lambda + 2 = (\lambda + 1)(\lambda + 2) = 0, \lambda = -1, -2$
+    - $y_0(x) = c_1e^{-x} + c_2e^{-2x}$
+  - Get particular solution y~p~(x) for inhomogeneous equation
+    - Assume $y_p(x) = Ae^{2x}, (A \text{ is const., } e^{2x} \text{ is right side})$
+      - $4Ae^{2x} + 3\cdot 2Ae^{2x} + 2\cdot Ae^{2x}  = e^{2x}, A= \frac{1}{12}$
+    - $y(x) = y_0(x) + y_p(x) = c_1e^{-x} + c_2e^{-2x} + \frac{1}{12}e^{2x}$
+
+- Solve general solution 𝑦(𝑥) of : $y^{''} + 3y^{'} +2y = e^{-x}$
+  - Get general solution $Y_0(x)$ for homogeneous equation
+    - $y_0(x) = c_1e^{-x} + c_2e^{-2x}$
+  - Get particular solution y~p~(x) for inhomogeneous equation
+    - Assume $y_p(x) = Ae^{-x}, (A \text{ is const., } e^{-x} \text{ is right side})$
+      - $Ae^{-x} - 3Ae^{-x} + 2\cdot Ae^{-x}  = 0 ??$
+      - Assume $y_p(x) = Axe^{-x}, (A \text{ is const., } e^{-x} \text{ is right side})$
+        - $(-Ae^{-x} - Ae^{-x} + Axe^{-x}) + 3(Ae^{-x} - Axe^{-x}) + 2Axe^{-x} = e^{-x} \rightarrow A= 1$
+    - $y(x) = y_0(x) + y_p(x) = c_1e^{-x} + c^2e^{-2x} + xe^{-x}$
+
+- Solve particular solution of : $y^{''} + 3y^{'} +2y = \cos x$
+  - Ex1: Assume particular solution is $y_p = \alpha \cos x + \beta \sin x$
+    - &alpha; , &beta; are sonstant. Substitute y~p~ to equation
+    - $\alpha = \frac{1}{10}, \beta = \frac{3}{10}, thus y_p = \frac{1}{10}\cos x + \frac{3}{10}\sin x $
+  - Ex2: Solve it in imaginary space, then take real part
+    - Assume target solution is $u^{''} + 3u^{'} +2u = e^{ix}$ `{according to Euler formula:}` 
+    - >$e^{ix} = \cos x + i\sin x$
+    - Assume particular solution is $u_p = Ae^{ix}$ `{A is const}`
+    - $A = \frac{1}{10} - \frac{3}{10}i, u_p = (\frac{1}{10}\cos x + \frac{3}{10}\sin x)$
+    - $y_p = \R\{u_p\} = \frac{1}{10}\cos x + \frac{3}{10}\sin x$
+
+- Solve particular solution of : $y^{''} + 3y^{'} + 2y = x^2$
+  - Assume particular solution is $y_p = \alpha x^2 + \beta x + \gamma$
+    - &alpha;, &beta;, &gamma;, are sonstant. Substitute y~p~ to equation
+    - $2\alpha x^2 + (6\alpha + 2\beta)x + (2\alpha + 3\beta + 2\gamma) = x^2$
+  - This equation should satisfy following conditions
+    - $x^2 : 2\alpha =1, x:6\alpha +  2\beta =0, x^0: 2\alpha +3\beta + 2\gamma = 0$, thus
+    - $y_p = \frac{1}{2}x^2 - \frac{3}{2}x - \frac{7}{4}$
+
+- Solve particular solution  of : $y^{''} + y^{'} = x^2$
+  - Get general solution y~0~(x) for homogeneous equation
+    - Characteristic equation: 𝜆(𝜆 + 1)= 0
+    - $y_0(x) = c_1 + c_2e^{-x}$
+  - Particular solution: cannot fix coefficient cx^0^
+  - Assume particular solution is $y_p = \alpha x^3 + \beta x^2 + \lambda x$
+    - &alpha;, &beta;, &gamma; are constant. Substitute y~p~ to equation
+    - $3\alpha x^2 + (6\alpha + 2 \beta)x +(2\beta + \gamma) = x^2$
+    - This equation should satisfy following conditions
+      - $x^2: 3\alpha = 1, x: 6\alpha + 2\beta = 0, x^0: 2\beta + \gamma = 0$, thus
+    - $y_p = \frac{1}{3}x^2 -x + 2, y = \frac{1}{3}x^2 -x + 2 + c_1 + c_2e^{-x}$
+
+***Initial condition***
+- Use initial condition to calculate particular solution
+  - $y^{''} + ay^{'} + by = r(x)$, use y(0) = A, y^'^(0) = B. (A,B: const)
+  - If one particular solution y~p~ is known, general solution y(x):
+    - $y(x) = c_1\phi (x) + c_2 \psi (x) +y_p$ &phi;(x) and &psi;(x): shape of basic functions
+    - Calculate 𝑐~1~ and 𝑐~2~ using initial conditions
+  - Generally, solve next simultaneous equation
+    - $\begin{bmatrix} \phi(0) & \psi(0) \\ \phi^{'}(0) & \psi^{'}(0)\end{bmatrix}\begin{bmatrix} c_1 \\ c_2\end{bmatrix} = \begin{bmatrix}A-y_p(0) \\ B-y_p(0)\end{bmatrix}$
+- Solve particular solution 𝑦(𝑥)
+  - $y^{''} + 3y^{'} + 2y = e^{2x}, y(0) = 0, y^{'} = 1$
+  - Get general solution $y(x) = c_1e^{-x} + c_2e^{-2x} + \frac{1}{12}e^{2x}$
+  - $ y(0)  = c_1 + c_2 + \frac{1}{12} = 0$
+  - $y^{'} (0) = -c_1 -2c_2 +\frac{1}{6} = 1, \text{thus} c_1 = \frac{2}{3}, c_2 = -\frac{3}{4}$
+  - $y(x) = \frac{2}{3}e^{-x} -\frac{3}{4}e^{-2x} + \frac{1}{12}e^{2x}$
+
+![](example2.png)
+![](example2_1.png)
+![](example3.png)
+![](example3_1.png)
+![](example3_2.png)
+
+
+***Exercise***
+- $y^{''} + 3y^{'} + 2y = \cos x$
+  - $\lambda = -1, -2 \\ y_0 = c_1e^{-x} + c_2e^{-2x}$ (c~1~, c~2~ : constants)
+  - asssume particular solution $y_p = \alpha \cos x + \beta \sin x$ (&alpha;, &beta; : constant)
+  - $(-\alpha \cos x - \beta \sin x) + 3(-\alpha \sin x + \beta \cos x) + 2(\alpha \cos x + \beta \sin x) = \cos x  $
+  - $(-\alpha  +3\beta + 2\alpha)\cos x + (-\beta - 2 \alpha + 2\beta)\sin x = \cos x$
+  - $ \alpha = \frac{1}{10}, \beta = \frac{3}{10}$
+  - $y_p = \frac{1}{10} \cos x + \frac{3}{10} \sin x $
+  - $y = \frac{1}{10} \cos x + \frac{3}{10} \sin x + c_1e^{-x} + c_2e^{-2x}$
+- $y^{''} - 2y^{'} + 3y = x^2$
+  - $\lambda = 1 \pm \sqrt{2}i $
+  - $y_0 = c_1e^{1+\sqrt{2}i} + c_2e^{1 - \sqrt{2}i}$ (c~1~, c~2~: const)
+  - Assume particualr solution $y_p = \alpha x^2 + \beta x  + \gamma$ (&alpha;, &beta;, &gamma; : const)
+  - $2\alpha - (2\alpha x + \beta) + 3(\alpha x^2 + \beta ) = x^2$
+  - $\alpha = \frac{1}{3}, \beta = \frac{4}{9}, \gamma = \frac{2}{27}$
+  - $y = y_0 + y_p = c_1e^{1+\sqrt{2}i} + c_2e^{1 - \sqrt{2}i} + \frac{1}{3}x^2 + \frac{4}{9} x + \frac{2}{27}$
+- $y^{''} - 2y^{'} - 3y = e^x$
+  - $\lambda = -1, 3$
+  - $y_0 = c_1 e^{(3x)} + c_2e^{(-x)}$ (c~1~, c~2~: const)
+  - Assume particular solution $y_p = Ae^x$ (A: const)
+  - $A = -\frac{1}{4}$
+  - $y = c_1 e^{(3x)} + c_2e^{(-x)} + -\frac{1}{4}e^x$
+- $y^{''} - 2y^{'} - 3y = e^{-x}$
+  - $\lambda = -1, 3$
+  - $y_0 = c_1 e^{(3x)} + c_2e^{(-x)}$ (c~1~, c~2~: const)
+  - Assume particular solution $y_p = Axe^{-x}$ (A: const)
+  - $\mathbf{y^{'}_p = A(1-x)e^{-x}}$
+  - $\mathbf{y^{''}_p = A(x-2)e^{-x}}$
+  - $A = -\frac{1}{4}$
+  - $y = y_0 + y_p = c_1 e^{(3x)} + c_2e^{(-x)} -\frac{1}{4}e^{-x} $
+
+***Solve particular solution***
+- $y^{''} + 3y^{'} + 2y = \cos x$
+  - $\lambda = -1, -2 \\ y_0 = c_1e^{-x} + c_2e^{-2x}$ (c~1~, c~2~ : constants)
+  - asssume particular solution $y_p = \alpha \cos x + \beta \sin x$ (&alpha;, &beta; : constant)
+  - $(-\alpha \cos x - \beta \sin x) + 3(-\alpha \sin x + \beta \cos x) + 2(\alpha \cos x + \beta \sin x) = \cos x  $
+  - $(-\alpha  +3\beta + 2\alpha)\cos x + (-\beta - 2 \alpha + 2\beta)\sin x = \cos x$
+  - $ \alpha = \frac{1}{10}, \beta = \frac{3}{10}$
+  - $y_p = \frac{1}{10} \cos x + \frac{3}{10} \sin x $
+  - $y = \frac{1}{10} \cos x + \frac{3}{10} \sin x + c_1e^{-x} + c_2e^{-2x}$
+  - $y^{'}(x) = -c_1e^{-x} - 2c_2e^{-2x}-\frac{1}{10}\sin x + \frac{3}{10}\cos x$
+  - $y(\pi) = 0, y^{'}(\pi) = 1$
+  - $c_1 = \frac{3}{2}, c_2 =  \frac{3}{2}e^{\pi}$
+  - $y(x) = \frac{1}{10} \cos x + \frac{3}{10} \sin x + \frac{3}{2}e^{-x+\pi} + \frac{3}{2}e^{-2(x-\pi)}$
+
+## Array and vector
+
+### Motivation
+- div **D** = &rho;
+  - $\iint \mathbf{D} \cdot d \mathbf{S} = \iiint \rho dV$ (Gauss’s eq of electricfield)
+- div **B** = &rho;
+  - $\iint \mathbf{B} \cdot d \mathbf{S} = \iiint div \mathbf{B} dV$ (Gauss’s eq of magneticfield)
+  - $rot \mathbf{H} = i + \frac{\delta D}{\delta t} : \oint \mathbf{H} \cdot d\mathbf{r} = \iint(i+\frac{\delta \mathbf{D}}{\delta t})\cdot \mathbf{S}$ `Ampele’s law`
+  - $div \mathbf{E} = - \frac{\delta B}{\delta t}: \oint \mathbf{E} \cdot d\mathbf{r} = -\frac{\delta}{\delta t}\iint \mathbf{B}\cdot d \mathbf{S}$ `Faraday’s law`
+
+### Scalar and Vector
+- Scalar: Value (only)
+- Vector: Value (length) and its direction
+- Vector from point 𝑃 to 𝑄 is: $\vec{PQ}$
+  - 𝑃: start point, 𝑄: end point
+  - if $\vec{P^{'}Q^{'}}$ is equal to $\vec{PQ}$, $\vec{PQ}$ and  $\vec{P^{'}Q^{'}}$ is in the same class
+  - If two points are the same, it is zero vector $\vec{PP}, \vec{QQ}$
+- To show the vector, we use ****bold and italic****
+- Vector: $\textbf{\textit{a}} = \vec{PQ}$
+- Zero vector ***0*** = $\vec{PP}$
+- ![](vector1.png)
+
+### Add, sub, extension
+
+- Assume $\textbf{\textit{a}} = \vec{OA}, \textbf{\textit{b}} = \vec{OB}, \textbf{\textit{c}} = \vec{OC}$, where O, A, B, C composes parallelogram
+  - Define: $-\textbf{\textit{a}} = -\vec{OA} = \vec{AO}$ <img src="vector2.png" align="right">
+  - Define: $\textbf{\textit{a}} + \textbf{\textit{b}} = \vec{OA} + \vec{OB} = \vec{OC}$
+  - Define: $\textbf{\textit{a}} - \textbf{\textit{b}} = \vec{OA} - \vec{OB} = \vec{OC^{'}}$
+- For real value &lambda;, its product to the vector ***a*** is
+  - ***a***&lambda; = &lambda;***a***
+- If the three points 𝑃, 𝑄, 𝑅 are on the same line: $\vec{PQ} = \lambda \vec{PR}$
+- If the two vectors are in parallel: ***a***&lambda; = ***b***
+  - Geometric vector space
+    - Vector space: more general and abstract
+
+### Vector space
+- 𝐿 is called vector space if element of 𝐿 satisfy following definition and notation
+  - Addition: result of ***a*** + ***b*** is unique (***a***, ***b*** &in; ***L***)
+  - Scalar multiply: result of  ***a***&lambda; is unique (***a*** &in; &lambda; &in; R )
+- Both satisfy following:
+  - Association law: (***a*** + ***b***) + ***c*** = ***a*** + (***b*** + ***c***)
+  - Exchange law: ***a*** + ***b*** = ***b*** + ***a***
+  - Identity element: ***a*** + ***o*** = ***a***
+  - inverse element: ***a*** + ***-a*** = ***o***
+
+### Component
+
+- Vector ***a*** is also defined by its components [a~1~, ..., a~n~]
+  - n: its dimension
+- For the xyz-coordinate system, ***a*** = [a~x~, a~y~, a~z~]
+  - This also satisfy the rules of vector space
+- Or, using unit vector ***i***, ***j***, ***k*** for xyz-coord system
+  - ***a*** = a~1~***i*** + a~2~***j*** + a~3~***k***, where a~1~ = |a~x~|, a~2~ = |a~y~|, a~3~ = |a~z~|
+- Length: |***a***| = $\sqrt{a^{2}_x + a^{2}_y + a^{2}_z}$, unit vector ***u*** = ***a***/|***a***|
+
+### Inner product
+- For two vectors $\textbf{\textit{a}} = \vec{OA}, \textbf{\textit{b}} = \vec{OB}, \textbf{\textit{a}} \cdot \textbf{\textit{b}} = c = |\textbf{\textit{a}}||\textbf{\textit{b}}|\cos \theta$ is called as inner product in scaler value $\theta = \angle AOB$
+- Inner products has following characteristics
+  - $\textbf{\textit{a}} \cdot \textbf{\textit{b}}= \textbf{\textit{b}} \cdot \textbf{\textit{a}}$ 
+  - $\textbf{\textit{a}} \cdot (\textbf{\textit{b}} + \textbf{\textit{c}}) = \textbf{\textit{a}} \cdot \textbf{\textit{b}} + \textbf{\textit{a}} \cdot \textbf{\textit{c}}$
+  - $\lambda \textbf{\textit{a}} \cdot \textbf{\textit{b}} = \textbf{\textit{a}} \cdot \lambda\textbf{\textit{b}} = \lambda (\textbf{\textit{a}} \cdot \textbf{\textit{b}})$
+- For unit vector ***i***, ***j***, ***k***
+  - $\textbf{\textit{i}} \cdot \textbf{\textit{i}} = \textbf{\textit{j}} \cdot \textbf{\textit{j}} = \textbf{\textit{k}} \cdot \textbf{\textit{k}} = 1$ 
+  - $\textbf{\textit{i}} \cdot \textbf{\textit{j}} = \textbf{\textit{j}} \cdot \textbf{\textit{k}} = \textbf{\textit{k}}\cdot \textbf{\textit{i}} = 0$
+
+### Outer product
+- Assume right-hand side coordinate system
+- For $\textbf{\textit{a}} = \vec{OA}, \textbf{\textit{b}} = \vec{OB}, \textbf{\textit{c}} = \textbf{\textit{a}} \times \textbf{\textit{b}}$: outer product
+  - |***c***| = |***a***||***b***|sin &theta;<img src="vector3.png" align="right">
+  - Angle of ***c***: perpendicular to the surface of |***a***||***b***|
+  - If ***a*** and ***b*** are in parallel (sin &theta; = 0), ***a*** or ***b*** = ***o***, c = ***o***
+- Theorem:
+  - $\textbf{\textit{a}} \times \textbf{\textit{a}} = \textbf{\textit{o}}$
+  - $\textbf{\textit{a}} \times \textbf{\textit{b}} = -\textbf{\textit{b}} \times \textbf{\textit{a}}$
+  - $\lambda\textbf{\textit{a}} \times \textbf{\textit{b}} = \textbf{\textit{a}} \times \lambda \textbf{\textit{b}} = \lambda (\textbf{\textit{a}} \times \textbf{\textit{b}})$
+  - $\textbf{\textit{i}} \cdot \textbf{\textit{i}} = \textbf{\textit{j}} \cdot \textbf{\textit{j}} = \textbf{\textit{k}} \cdot \textbf{\textit{k}} = ***0***$
+  - $\textbf{\textit{i}} \cdot \textbf{\textit{j}} = \textbf{\textit{k}}, \textbf{\textit{j}} \cdot \textbf{\textit{k}} = \textbf{\textit{i}}, \textbf{\textit{k}}\cdot \textbf{\textit{i}} = \textbf{\textit{j}}$ 
