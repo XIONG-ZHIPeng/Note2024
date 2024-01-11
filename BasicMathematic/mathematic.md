@@ -616,7 +616,7 @@ characteristic equation
    -  ![](electro.png)
 
 ### Divergence of vector
-- For vector $\textbf{\textit{F}}(x, y, z) = F_1(x,y,z)\textbf{\textit{i}} + F_2(x,y,z)\textbf{\textit{j}}, F_3(x,y,z)\textbf{\textit{k}}$
+- For vector $\textbf{\textit{F}}(x, y, z) = F_1(x,y,z)\textbf{\textit{i}} + F_2(x,y,z)\textbf{\textit{j}} + F_3(x,y,z)\textbf{\textit{k}}$
   - div $\textbf{\textit{F}} = \frac{\partial F_1}{\partial x} + \frac{\partial F_2}{\partial y} + \frac{\partial F_3}{\partial z} = \nabla \cdot \textbf{\textit{F}}$ is called as divergence
 - Vector ***F***, ***G*** scalar f satisfy following conditions
     - div(***F*** + ***G***) = div(***F***) + div(***G***)
@@ -632,3 +632,27 @@ characteristic equation
     - $\textbf{\textit{F}} \cdot d \textbf{\textit{S}} = \textbf{\textit{F}} \cdot d \textbf{\textit{S}}_2 + \textbf{\textit{F}} \cdot d \textbf{\textit{S}}_1$
     - = $F_1(x+\frac{dx}{2}, y, z)(dydz,0,0) + F_1(x-\frac{dx}{2}, y, z)(-dydz,0,0)$
     - = $\frac{\partial F_1}{\partial x}dxdydz$
+    - ![](vector10.png)
+    - Diff. flow in (the red arrow) and out (the gray arrow)
+
+### Rotation of vector
+- For vector $\textbf{\textit{F}}(x, y, z) = F_1(x,y,z)\textbf{\textit{i}} + F_2(x,y,z)\textbf{\textit{j}} + F_3(x,y,z)\textbf{\textit{k}}, \text{rot}\textbf{\textit{F}} = (\frac{\partial F_3}{\partial y} - \frac{\partial F_2}{\partial z})\textbf{\textit{i}} + (\frac{\partial F_1}{\partial z} - \frac{\partial F_3}{\partial x})\textbf{\textit{j}} + (\frac{\partial F_2}{\partial x} - \frac{\partial F_1}{\partial y})\textbf{\textit{k}} = \nabla \times \textbf{\textit{F}}$ is called as rotation
+- rot ***F*** = (rot~1~ ***F***)***i*** + (rot~2~ ***F***)***j*** + (rot~3~ ***F***)***k***
+- Vector ***F***, ***G***, scalar f satisfy following conditions
+  - rot(***F*** + ***G***) = rot(***F***) + rot(***G***)
+  - rot(f***G***) = grad(f)&times;G + f&nabla;&times;G
+- Physical meaning
+  - rot ***𝑭*** > 0: right-hand side (screw) rotation <img src="rotation1.png" align="right">
+  - rot ***𝑭*** < 0: left-hand side (screw) rotation <img src="rotation2.png" align="right">
+
+### Physical meaning of rotation
+- Focus 3rd term (𝒌) of rotation
+  - If $\frac{\partial F_2}{\partial x} > 0$, it generates right-hand side rotation
+  - If $-\frac{\partial F_1}{\partial y} > 0$, it generates right-hand side rotation
+  - If $(\frac{\partial F_2}{\partial x} - \frac{\partial F_1}{\partial y})\textbf{\textit{k}} > 0$ means right-hand side rotation is available
+
+### Examples
+![](example4_1.png)
+![](example4_2.png)
+
+### Exercise
