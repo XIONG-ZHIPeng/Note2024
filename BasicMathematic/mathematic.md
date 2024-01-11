@@ -4,7 +4,7 @@
 
 > - [Differential equations and physics](#differential-equation)
 > - [Array and vector](#array-and-vector)
-> - Vector analysis
+> - [Vector analysis](#vector-analysis)
 > - Complex function theory
 > - Fourier transform
 > - Laplace transform
@@ -517,3 +517,37 @@ characteristic equation
   - $\lambda\textbf{\textit{a}} \times \textbf{\textit{b}} = \textbf{\textit{a}} \times \lambda \textbf{\textit{b}} = \lambda (\textbf{\textit{a}} \times \textbf{\textit{b}})$
   - $\textbf{\textit{i}} \cdot \textbf{\textit{i}} = \textbf{\textit{j}} \cdot \textbf{\textit{j}} = \textbf{\textit{k}} \cdot \textbf{\textit{k}} = ***0***$
   - $\textbf{\textit{i}} \cdot \textbf{\textit{j}} = \textbf{\textit{k}}, \textbf{\textit{j}} \cdot \textbf{\textit{k}} = \textbf{\textit{i}}, \textbf{\textit{k}}\cdot \textbf{\textit{i}} = \textbf{\textit{j}}$ 
+
+**Vector area**
+- Vector area: vector combining an area quality w/ dimension
+- Assume surface 𝑆 on signed area in two dimension system
+  - Vector ***S*** can  be expressed with its unit vector ***n***
+    - ***S*** = S ***n***
+  - Rotation of vector ***𝒏*** express the sign
+    - anticlockwise (right-hand screw) : plus
+    - clockwsise (left-hand screw): minus
+  - If S is subset of S~i~, the vector area 𝑺 can be
+    - $\textbf{\textit{S}} = \sum S_i \textbf{\textit{n_i}}$
+    - ![](vector4.png)
+
+**Projection**
+- Area vector is used to calculate surface integral
+  - Treat flus of a vector filed through a surface
+  - Projection area 𝐴 on plane ***S*** can be calculated by dot product with target plane unit normal ***𝒎***
+    - $A = \textit{\textbf{S}} \cdot \textit{\textbf{m}}$
+  - If the two surface has same xy and angle 𝜃 for z-coordinate
+  - $A = |\textbf{\textit{S}}|\cos \theta$
+  - ![](vector5.png)
+
+**Volume**
+- Volume 𝑉 can be calculated by area vector
+  - Calculate volume 𝑉 of tilted cylinder<img src="vector6.png" align="right">
+    - Bottom plane: 𝐷
+    - Area vector: ***𝑺***
+    - Direction: ***𝑨***
+    - Assume its angle: 𝜃
+  - Hight ℎ = |***𝑨***| cos 𝜃
+  - Volume $V = h|\textbf{\textit{S}}| = |\textbf{\textit{A}}||\textbf{\textit{S}}|\cos \theta = |\textbf{\textit{A}}||\textbf{\textit{S}}|$
+- Volume $V = |\textbf{\textit{A}}||\textbf{\textit{S}}|$ xpress the amount of flow ***𝑨*** which punctulate the plane 𝐷
+
+## Vector analysis
