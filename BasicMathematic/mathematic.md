@@ -527,7 +527,7 @@ characteristic equation
     - anticlockwise (right-hand screw) : plus
     - clockwsise (left-hand screw): minus
   - If S is subset of S~i~, the vector area 𝑺 can be
-    - $\textbf{\textit{S}} = \sum S_i \textbf{\textit{n_i}}$
+    - $\textbf{\textit{S}} = \sum S_i \textbf{\textit{n}}_i$
     - ![](vector4.png)
 
 **Projection**
@@ -551,3 +551,84 @@ characteristic equation
 - Volume $V = |\textbf{\textit{A}}||\textbf{\textit{S}}|$ xpress the amount of flow ***𝑨*** which punctulate the plane 𝐷
 
 ## Vector analysis
+### Derivation for vector function
+- Vector function ***F***(t): vector ***F*** is a function of scalar t
+  - if vector ***F*** is continuous to the t: ***F*** is continuous
+- Assume vector $\textit{\textbf{F}}(t) = \vec{OP}$, where O is origin(fixed point)
+  - Point P draw a curved line
+  - ![](vector7.png)
+
+### Characeristics
+- A limit: if vector ***A*** satisfy $\lim_{n \to \infty}|\textit{\textbf{A}}_n - \textit{\textbf{A}}| = 0 $ for ***A***~0~ ... ***A***~n~
+  - $\lim_{n \to \infty}\textit{\textbf{A}}_n = \textit{\textbf{A}} $, and ***A*** is a limit of ***A***~0~ ... ***A***~n~
+- A limit: if vector function ***F***(t) has const. vector ***A***, and it satisfy $\lim_{t \to t_0}|\textit{\textbf{F}}(t) - \textit{\textbf{A}}| = 0 $ for t &rightarrow; t~0~
+  - $\lim_{t \to t_0}\textit{\textbf{F}}(t) = \textit{\textbf{A}} $ and ***A*** is a limit of ***F***(t) for t &rightarrow; t~0~
+  - For $\textit{\textbf{F}}(t) = F_1(t)\textit{\textbf{i}} + F_2(t)\textit{\textbf{j}} + F_3(t)\textit{\textbf{k}}, \textit{\textbf{A}} = A_1\textit{\textbf{i}} + A_2\textit{\textbf{j}} + A_3\textit{\textbf{k}}$
+    - $\lim_{t \to t_0}\textit{\textbf{F}}_1(t) = A_1, \lim_{t \to t_0}\textit{\textbf{F}}_2(t) = A_2, \lim_{t \to t_0}\textit{\textbf{F}}_3(t) = A_3$
+- Continuity: if vector function ***F***(t) satisfy $\lim_{t \to t_0}\textit{\textbf{F}}(t) = \textit{\textbf{F}}(t_0) $ for t &rightarrow; t~0~, ***F***(t) is continuous.
+- Derivative: if $\lim_{\Delta t \to 0}\frac{\Delta \textbf{\textit{F}}}{\Delta t} = \lim_{\Delta t \to 0}\frac{\Delta \textbf{\textit{F}}(t_0 + \Delta t) - \textbf{\textit{F}}(t_0)}{\Delta t}$ is available, this is called as differential coefficient ***F***^'^(t~0~)
+  - For each t, the vector function ***F***^'^(t~0~) or $\frac{d\textbf{\textit{F}}}{dt}$ is called as derivative or derivative vector
+  - Similary, derivative can be taken as ***F***^'^(t~0~) and ***F***^(n)^(t~0~)
+- Geometric meaning
+  - Assume $\vec{OP} = \textbf{\textit{F}}(t),\vec{OQ} = \textbf{\textit{F}}(t + \Delta) $
+    - ![](vector8.png)
+    - $\Delta \textbf{\textit{F}} = \textbf{\textit{F}}(t + \Delta t) - \textbf{\textit{F}}(t) = \vec{PQ}$
+    - Take &Delta;t &rightarrow; 0 then &Delta;***F*** becomes tangent
+
+### Theorems for derivation
+- Vector function ***F***(t) and ***G***(t), scalar function f(t), satisfy followings
+  - (sum) : $\frac{d}{dt}(\textbf{\textit{F}} + \textbf{\textit{G}}) = \frac{d}{dt}\textbf{\textit{F}} + \frac{d}{dt}\textbf{\textit{G}}$
+  - (scalar prod): $\frac{d}{dt}(f\textbf{\textit{F}}) = \frac{df}{dt}\textbf{\textit{F}} + f\frac{d}{dt}\textbf{\textit{F}}$
+  - (inner prod): $\frac{d}{dt}(\textbf{\textit{F}} \cdot \textbf{\textit{G}}) = \frac{d\textbf{\textit{F}}}{dt} \cdot \textbf{\textit{G}} + \frac{d\textbf{\textit{G}}}{dt} \cdot \textbf{\textit{F}}$
+  - (outer prod): $\frac{d}{dt}(\textbf{\textit{F}} \times \textbf{\textit{G}}) = \frac{d\textbf{\textit{F}}}{dt} \times \textbf{\textit{G}} + \frac{d\textbf{\textit{G}}}{dt} \times \textbf{\textit{F}}$
+  - For $\textbf{\textit{F}} = F_1\textbf{\textit{i}} + F_2\textbf{\textit{j}} + F_3\textbf{\textit{k}}, \frac{d\textbf{\textit{F}}}{dt} = \frac{dF_1}{dt}\textbf{\textit{i}} + \frac{dF_2}{dt}\textbf{\textit{j}} + \frac{dF_3}{dt}\textbf{\textit{k}}$
+  - If ***F*** is constant, $\frac{d\textbf{\textit{F}}}{dt} \text{ is } \textbf{\textit{o}}$, or perpendicular s.t. $\textbf{\textit{F}} \cdot \frac{d\textbf{\textit{F}}}{dt} = 0$
+  - ![](vector9.png)
+
+### High order derivatives, partial difference
+- High order derivatives can defined as similar to 1st order
+  - $\frac{d^2\textbf{\textit{F}}}{dt^2}, \frac{d^3\textbf{\textit{F}}}{dt^3}, \dots \frac{d^n\textbf{\textit{F}}}{dt^n}$
+  - For $\textbf{\textit{F}} = F_1\textbf{\textit{i}} + F_2\textbf{\textit{j}} + F_3\textbf{\textit{k}}, \frac{d^n\textbf{\textit{F}}}{dt^n} = \frac{d^nF_1}{dt^n}\textbf{\textit{i}} + \frac{d^nF_2}{dt^n}\textbf{\textit{j}} + \frac{d^nF_3}{dt^n}\textbf{\textit{k}}$
+- Partial difference also defined like derivation
+  - $\textbf{\textit{A}} = \textbf{\textit{A}}(u, v), \frac{\delta \textbf{\textit{A}}}{\delta u}, \frac{\delta \textbf{\textit{A}}}{\delta v}, \frac{\delta^2 \textbf{\textit{A}}}{\delta v^2}, \frac{\delta^2 \textbf{\textit{A}}}{\delta v \delta u}, \frac{\delta^2 \textbf{\textit{A}}}{\delta u \delta v}, \frac{\delta^2 \textbf{\textit{A}}}{\delta u^2}$
+- Total difference of $\textbf{\textit{A}}(u, v) $ can be defined as
+  - $\delta\textbf{\textit{A}}(u, v) = \frac{\delta \textbf{\textit{A}}}{\delta v}du + \frac{\delta \textbf{\textit{A}}}{\delta u}dv$
+  - It approx. small delta of &delta;***A*** by small delta of du, dv
+    - For $\textit{\textbf{A}} = A_1\textit{\textbf{i}} + A_2\textit{\textbf{j}} + A_3\textit{\textbf{k}}, \delta\textit{\textbf{A}} = \delta A_1\textit{\textbf{i}} + \delta A_2\textit{\textbf{j}} + \delta A_3\textit{\textbf{k}}$
+
+### Gradient of scalar
+- Scalar function: 𝑓(𝑥, 𝑦, 𝑧) can be defined in unique
+  - This field is called scalar field 𝑓
+    - Distribution of temperature, mass, voltage
+- Vector function: ***𝑭***(𝑥, 𝑦, 𝑧) can be defined in unique
+  - This field is called vector field ***𝑭***
+    - Electric field, magnetic field, gravity field
+- Gradient of scalar: grad $f = \nabla f = \frac{\partial f}{\partial x}\textbf{\textit{i}} + \frac{\partial f}{\partial y}\textbf{\textit{j}} + \frac{\partial f}{\partial z}\textbf{\textit{k}}$
+  - &nabla; Hamilton operator
+    - &nabla;(f + g) = &nabla;f + &nabla;g, &nabla;&lambda;f = &lambda;&nabla;f, &nabla;(fg) = g&nabla;f + f&nabla;g
+    - $\nabla \phi (f) = \frac{d\phi}{df}\nabla f$, where &phi;(f) is a funtion of f
+
+### Equipotential surface
+- If group of points 𝑃(𝑥, 𝑦, 𝑧) satisfy 𝑓(𝑥, 𝑦, 𝑧) = 𝑐 (𝑐: const), 𝑃 is called equipotential surface
+  - In the case of $f(x, y, z) = x^2 + y^2 + z^2$
+    -  Surface of sphere
+-  In electro-magnetics, electron (𝑞) create divergence of electric lines (electric field: 𝐸), and electric line create equipotential voltage (𝑉)
+   -  ![](electro.png)
+
+### Divergence of vector
+- For vector $\textbf{\textit{F}}(x, y, z) = F_1(x,y,z)\textbf{\textit{i}} + F_2(x,y,z)\textbf{\textit{j}}, F_3(x,y,z)\textbf{\textit{k}}$
+  - div $\textbf{\textit{F}} = \frac{\partial F_1}{\partial x} + \frac{\partial F_2}{\partial y} + \frac{\partial F_3}{\partial z} = \nabla \cdot \textbf{\textit{F}}$ is called as divergence
+- Vector ***F***, ***G*** scalar f satisfy following conditions
+    - div(***F*** + ***G***) = div(***F***) + div(***G***)
+    - div(f***G***) = grad(f) $ \cdot $ ***G*** + f div***G***
+    - $\text{div grad}(f) = \frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} + \frac{\partial^2 f}{\partial z^2}$
+- Physical meaning
+  - div***F*** > 0 : something spout (flow out)
+  - div***F*** < 0 : something swallowed (flow in)
+- div $\textbf{\textit{F}} = \frac{\partial F_1}{\partial x} + \frac{\partial F_2}{\partial y} + \frac{\partial F_3}{\partial z} = \nabla \cdot \textbf{\textit{F}}$
+- Assume flow ***𝑭*** of small box 𝑑𝑥𝑑𝑦𝑑𝑧
+  - Assume flow ***𝑭*** of area 𝑑***𝑺***~1~ = (−𝑑𝑦𝑑𝑧, 0,0) at 𝑥 − $\frac{𝑑𝑥}{2}$
+  - Assume flow ***𝑭*** of area 𝑑***𝑺***~2~ = (+𝑑𝑦𝑑𝑧, 0,0) at 𝑥 + $\frac{𝑑𝑥}{2}$
+    - $\textbf{\textit{F}} \cdot d \textbf{\textit{S}} = \textbf{\textit{F}} \cdot d \textbf{\textit{S}}_2 + \textbf{\textit{F}} \cdot d \textbf{\textit{S}}_1$
+    - = $F_1(x+\frac{dx}{2}, y, z)(dydz,0,0) + F_1(x-\frac{dx}{2}, y, z)(-dydz,0,0)$
+    - = $\frac{\partial F_1}{\partial x}dxdydz$
