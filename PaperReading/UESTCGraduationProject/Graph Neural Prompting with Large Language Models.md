@@ -41,3 +41,22 @@ Graph Neural Prompting encodes structural and fctual information contained in th
 ### Subgraph Retrieval
 1. For each answer options a~k~ and its corresponding context C and question Q, first obtain a set of matched entities E~match~ via entity linking too match the tokens in X to the entities in G. 
 2. Then, retrieve a subgraph G^'^ based on the entities in E~match~ by including their two-hop neighbors and the relations that connect them. 
+![](GNP1.png)
+
+### Graph Neural Prompting
+#### GNN Encoder
+Use GNN to encode the most relevant knowledge and further integrate the complex relationships among the entities
+1. Use pre-trained enntity embeddings to intialize the node embeddings
+2. Employ a standard graph attention network as GNN encoder for the retrieved subgraph G^'^ to get H~~ node embeddings
+
+#### Cross-modality Pooling
+Aim to identify the most pertinent nodes.
+1. Use the internal graph characteristics and the implicit inteeractions among nodes to dynamically identify node significance to get H~2~ node embeddings
+
+2. Leverage the textual prompt to calculate the importance of nodes within the graph.
+
+#### Domain Projector
+Aim to bridge the inherent disparities between graph and text.
+
+#### Self-supervised Link Prediction
+Refine its understanding of releationships between entities and capture graph knowledge.
