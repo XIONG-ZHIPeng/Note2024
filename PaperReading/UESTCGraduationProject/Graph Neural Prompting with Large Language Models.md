@@ -33,3 +33,11 @@ A knowledge graph is defined as $\mathbf{G = (\sigma, R, T)}$, where &sigma; is 
 
 ### Prompting LLMs for Questions Answering
 
+- hard prompt: textual input
+- soft prompt: form of the learnable embedding vectors
+
+Graph Neural Prompting encodes structural and fctual information contained in the knowledge graph G
+
+### Subgraph Retrieval
+1. For each answer options a~k~ and its corresponding context C and question Q, first obtain a set of matched entities E~match~ via entity linking too match the tokens in X to the entities in G. 
+2. Then, retrieve a subgraph G^'^ based on the entities in E~match~ by including their two-hop neighbors and the relations that connect them. 
