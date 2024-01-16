@@ -656,3 +656,48 @@ characteristic equation
 ![](example4_2.png)
 
 ### Exercise
+- Assume **a**, **b** is constant vector, |**r**(t)| = r(t), calculate its derivation
+  - $r\textbf{r} + (\textbf{a} \cdot \textbf{r})\textbf{b}$
+    - $(r\textbf{r} + (\textbf{a} \cdot \textbf{r})b)^{'}$
+    - $= r^{'}\textbf{r} + r\textbf{r}^{'} + (\textbf{a} \cdot \textbf{r}^{'})\textbf{b}$
+  - $\frac{\textbf{r}}{r^2}$
+    - $ = \frac{\textbf{r}^{'}}{r^2} - \frac{\textbf{r}}{r^3}$
+- Calculate gradient for following functions
+  - $f = xz^3 - x^2y$, calculate &nabla;f at point P(1,-2,2)
+    - $ \nabla f = \frac{\partial f}{\partial x}\textbf{i} + \frac{\partial f}{\partial y}\textbf{j} + \frac{\partial f}{\partial z}\textbf{k}$
+    - $ = (z^3 - 2xy)\textbf{i} + (-x^2)\textbf{j} + (3xz^2)\textbf{k}$
+    - $= (8+4)\textbf{i} + (-1)\textbf{j} + 12\textbf{k} = 12\textbf{i} -1\textbf{j} + 12\textbf{k}$
+  - $f = x^2y^2 - 2xz^3$, calculate &nabla;f at point P(1,-2,1)
+    - $\nabla f = (2xy^2 - 2z^3)\textbf{i} + (2x^2y)\textbf{j} + (-6xz^2)\textbf{k}$
+    - $6\textbf{i} - 4\textbf{j} - 6\textbf{k}$
+- Calculate divergence of following functions
+  - $x^2y\textbf{i} - 2y^2z^2\textbf{j} + 3z^3x^3\textbf{k}$
+    - $div \textbf{F} = \frac{\partial F_1}{\partial x} + \frac{\partial F_2}{\partial y} + \frac{\partial F_3}{\partial z}$
+    - $= 2xy - 4yz^2 + 9z^2x^3$
+- Calculate rotation of following functions
+  - $x^2\textbf{i} - 2xz\textbf{j} + y^2z\textbf{k}$
+  - rot(f) = $(\frac{\partial f_3}{\partial y} - \frac{\partial f_2}{\partial z})\textbf{i} + (\frac{\partial f_1}{\partial z} - \frac{\partial f_3}{\partial x})\textbf{j} + (\frac{\partial f_2}{\partial x} - \frac{\partial f_1}{\partial y})\textbf{k}$ 
+  - $= (2yz - (-2x))\textbf{i} + (0 - 0)\textbf{j} + ((-2z) - 0)\textbf{k}$
+  - $= 2(yz+x)\textbf{i} - 2z\textbf{k}$
+
+### Integral of Vector
+***Curvilinear Vector***
+- Assume a smooth curve C from point A to B, and scalar function f(P) = f(x, y, z) is continuous in curve C
+  -  Think curve C can divide into several arcs &Delta;s~1~ ... &Delta;s~2~
+     -  Points A~n~ divide a curve, these weight are points P~n~
+     -  Assume limit of n &rightarrow; &infin;, &Delta;s~i~ &rightarrow; 0; **curvilinear inntegral**
+     -  $\lim_{{n \to \infin}, {\Delta s_i \to 0}}\sum_{i=1}^{n}f(P_i)\Delta s_i = \int _C f(P)ds = \int _C f(x, y, z)ds$
+  -  Point D on curve C is function of the length (s) of arc arc(AD)
+  -  ![](curve0.png)
+-  
+
+
+
+
+
+
+
+
+
+
+
