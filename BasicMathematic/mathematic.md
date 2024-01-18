@@ -1,3 +1,4 @@
+<div style = "font-family : 'Times New Roman';">
 # Fundamental Mathematics
 
 **Content**
@@ -689,11 +690,110 @@ characteristic equation
      -  $\lim_{{n \to \infin}, {\Delta s_i \to 0}}\sum_{i=1}^{n}f(P_i)\Delta s_i = \int _C f(P)ds = \int _C f(x, y, z)ds$
   -  Point D on curve C is function of the length (s) of arc arc(AD)
   -  ![](curve0.png)
--  
+-  Point D on curve C is function of the length(s) of arc$\hat{AD}$
+   -  (Any) point D can be expressed as function of length s
+      -  $\textbf{r} = \textbf{r}(s) = x(s)\textbf{i} + y(s)\textbf{j} + z(s)\textbf{k}$
+      -  $\int_{C}f(x,y,z)ds = \int^{B}_{A}f(x(s),y(s),z(s))ds$
+-   If we use general parameter 𝑡 to express the curve 𝐶;
+    -   $\textbf{r} = \textbf{r}(t) = x(t)\textbf{i} + y(t)\textbf{j} + z(t)\textbf{k}$
+    -   $ds = \sqrt{(\frac{dx}{dt})^2 + (\frac{dy}{dt})^2 + (\frac{dz}{dt})^2}dt$
+    -   $\int_{C}f(x,y,z)ds = \int^{\beta}_{\alpha}f(x(s),y(s),z(s))\sqrt{(\frac{dx}{dt}^2 + \frac{dy}{dt}^2 + \frac{dz}{dt}^2)}dt$
+        -  where A, B of curve C are point &alpha; = t &beta; = t
 
+### Experssions of curvilinear integral
+- Several expressions are available for curvilinear integral
+  - $\int_C f ds = \int^{B}_{A}f ds = \int_{AB} f ds$
+  - $\int_{AB} f ds = - \int_{BA} f ds$
+- If point P is on the curve 𝐶, $\int_{AB} fds = \int_{AP} fds + \int_{PB} fds$
+- If the curve C is a closed curve, $\oint_C fds = \oint_{AB} fds$
 
+### Example of curvilinear integral
+- Calculate curvilinear integral of f(x, y, z) = $y^2z + z^2x + x^2y$
+  - Route 1: O(0, 0, 0) &rightarrow; Q(3, 0, 0) &rightarrow; R(3, 1, 0) &rightarrow; P(3, 1, 2)
+    - $\int_{R1}fds = \int^{Q}_{O}f ds + \int^{R}_{Q}f ds + \int^{P}_{R}f ds$
+    - $= \int^3_0 f(x, 0, 0)dx + \int^1_0 f(3, y, 0)dy + f^2_0 f(3, 1, z)dz \\ = \frac{65}{2}$
+  - Route 2: $\vec{OP}$
+    - $\vec{OP} = \textbf{r} = 3t\textbf{i} + t\textbf{j} + 2t\textbf{k} (0 \leq t \leq 1)$
+    - $ds = \sqrt{(sdt)^2 + (1dt)^2 + (2dt)^2} = \sqrt{14}dt$
+    - $\int_{R2} fds = \int^{\sqrt{14}}_{0}(y^2z+z^2x+x^2y)ds \\ = \int^1_0(2t^3 + 12t^3 + 9t^3)\sqrt{3^2 + 1^2 + 2^2}dt = \frac{23\sqrt{14}}{4}$
+  
+### Curvilinear integral for vector
+- Assume a smooth curve C from point A to B, and vector function **F**(P) = **F**(x, y, z) is continuous in curve C
+  - **r**(s) is a position vector from origin O to the point P on C
+  - Assume **t** $= \frac{d\textbf{r}}{ds}$ is a tangent of curve C at point P
+    - Curvilinear integral for the vector **F**: $\int_C \textbf{F}\cdot \textbf{t}ds$ <img src="vector11.png" align="right" width="100">
+    - Assume function of C: **r**(s) = x(s)**i** + y(s)**j** + z(s)**k**, **F** = F~1~**i** + F~2~**j** + F~3~**k**
+      - $\int_C \textbf{F}\cdot\textbf{t}ds = \int_C (\frac{F_1dx}{ds} + \frac{F_1dy}{ds} + \frac{F_1dz}{ds})$
+    - Scalar $\textbf{F}\cdot\textbf{t}$ is a tangent component of the vector **F**
 
+### Characteristics of curvilinear integral for vector
+-  Curvilinear integral for vector has following characteristics
+   -  For scalar field 𝑓(𝑥, 𝑦, 𝑧) and vector field **F**(𝑥, 𝑦, 𝑧)
+      -  $\int_C f(x, y, z)d\textbf{r} = \textbf{i}\int_C fdx + \textbf{j}\int_C fdy + \textbf{k}\int_C fdz$
+      -  $\int_C \textbf{F}(x, y, z)d\textbf{r} = \textbf{i}\int_C \textbf{F}_1dx + \textbf{j} \int_C \textbf{F}_2dy + \textbf{k}\int_C \textbf{F}_3dz$
+      -  $\int_C \textbf{F}\times d\textbf{r} = \int_C \textbf{F}\times \textbf{r}ds = \textbf{i}\int_C (F_2dz - F_3dy) + \textbf{j}\int_C (F_3dz - F_1dy) + \textbf{k}\int_C (F_1dz - F_2dy)$
 
+### Exercise
+- Calculate curvilinear integral $\int_C y d \textbf{r}$
+  - C: x = a cos(t), y = a sin(t), z = ht, (0 &leq; t &leq; 2&pi;)
+- Solution
+  - $\int_C yd\textbf{r} = \int_C a \sin t (\textbf{i}dx + \textbf{j}dy + \textbf{k}dz) \\ -\textbf{i}\int^{2\pi}_{0}a^2 \sin^2tdt + \textbf{j}\int^{2\pi}_{0}a^2 \sin t \cos tdt + \textbf{k}\int^{2\pi}_{0}ah \sin tdt \\ = -\pi a^2 \textbf{i}$
+
+### Potential 
+- If scalar function &phi;(x, y, z) is aviable for **F**(x, y, z) = grad&phi; ; &phi; is called as potential or scalar potential of **F**
+- Potential has following characteristics:
+  - Assume vector field **F**(x, y, z) has potential &phi;
+    - $\int^B_A \textbf{F}\cdot d\textbf{r} = -\int^B_A \nabla \varphi \cdot d \textbf{r} = \varphi (A) - \varphi(B)$
+  -  If curve C is a closed curve
+     -  $\oint _C F \cdot d\textbf{r} = -\oint _C \nabla \varphi \cdot d \textbf{r} = 0$
+
+### Surface integral for scalar
+- Assume smooth curved surface 𝑆
+  - Scalar function 𝑓(𝑃) = 𝑓(𝑥, 𝑦, 𝑧) is continuous in 𝑆
+    - Assume 𝑆 can be divided into small area $\Delta S_1 \dots \Delta S_n$, and any point of $P_1 \dots P_n$
+    - If $\lim\limits_{{n \rightarrow \infin},{\Delta S_i \rightarrow 0}} \sum^n_{i = 1}f(P_i)\Delta S_i$ is available, this is called surface integral for scalar $\int_S f(x, y, z)dS$
+  - If f(P) = 1, $\int_S f(x, y, z)dS$  is area of S.<img src="vector12.png" align="right" width="100">
+- for the curved surface, outside is the front.
+
+### Formula of surface integral
+- If surface S is given for z = g(x, y), surface integral of f(x, y, z) on S can be expressed as follows,
+  - $\int_S f(x, y, z)dS = \iint_D f(x, y, g(x, y))\sqrt{p^2 + q^2 +1}dxdy$
+  - $= \iint_D f(x, y, g(x, y)) \frac{dxdy}{|\textbf{n}\cdot\textbf{k}|}$ <img src="vector13.png" align="right" width="100">
+    - where, $p = \frac{\partial z}{\partial x}, q = \frac{\partial z}{\partial y}, \textbf{n}$ is unit normal vector of 𝑆, 𝐷 is projective of 𝑆 to 𝑥𝑦-coordinate
+
+#### Proof
+- Think small surface 𝑑𝑆 on 𝑆, its projective in 𝑥𝑦-coordinate can express 𝑑𝑦𝑑𝑥
+- Define angle of unit normal vectors **𝒏**, **𝒌** as 𝛾
+  - dS|cos &lambda;| = dxdy
+- $\textbf{n} = \frac{\pm 1}{\sqrt{p^2 + q^2 + 1}}$ when $p = \frac{\partial z}{\partial x}, q = \frac{\partial z}{\partial y} $
+- Thus, |cos &gamma;| = |**n**$\cdot$**k**| = $\frac{1}{\sqrt{p^2 + q^2 + 1}}$
+- $dS = \frac{dxdy}{|\cos \gamma|} = \frac{dxdy}{|\textbf{n}\cdot \textbf{k}|}$
+- $\int_S f(x, y, z)dS = \iint_D f(x, y, g(x, y)) \frac{dxdy}{|\textbf{n}\cdot\textbf{k}|} $ (z = g(x, y))
+
+### Surface integral for vector
+
+- For vector field **𝑭** and unit vector 𝒏 of surface **𝑆**integral of these inner products is called as surface integral of vector
+  - $\int_S \textbf{F}\cdot \textbf{n}dS$
+  - F~n~ is a **n** component of vector **F**($\textbf{F}\cdot\textbf{n} = F_n$)
+  - Assume $\textbf{n}dS = d\textbf{S}, d\textbf{S} is called area vector$
+    - $\int_S \textbf{F}\cdot\textbf{n} dS  = \int_S F_n dS = \int_S \textbf{F} \cdot d \textbf{S} = \oint \textbf{F}\cdot\textbf{n} dS$ (If 𝑆 is closed surface)
+    - For $\textbf{F} = F_1\textbf{i} + F_2\textbf{j} + F_3\textbf{k}$
+      - $\int \textbf{F}\cdot\textbf{n} dS = \iint_S (F_1dydz + F_2dzdx + F_3dxdy)$
+  - Several expressions for surface integral of vectors
+    - $\int \textbf{F}dS = \textbf{i}\int_S F_1dS + \textbf{j}\int_S F_2dS + \textbf{k}\int_S F_3dS$
+    - $\int_S \textbf{F}\times\textbf{b}dS = \int_S \textbf{F}\times d\textbf{S}$
+
+### Formula of surface integral
+- If surface 𝑆 is given for 𝑧 = 𝑔(𝑥, 𝑦), surface integral of **𝑭**(𝑥, 𝑦, 𝑧) on 𝑆 can be expressed as follows,
+  - $\int_S \textbf{F}(x, y, z)dS = \iint_D \textbf{F}(x, y, g(x,y))\sqrt{p^2 + q^2 +1}dxdy$<img src="vector13.png" align="right" width="100">
+    - where, $p = \frac{\partial z}{\partial x}, q = \frac{\partial z}{\partial y}$, D is projective of 𝑆 to 𝑥𝑦-coordinate
+
+### Surface integral in physics
+- In scalar: $\int_S \rho(x,y,z)dS$
+  - In the case &rho; is a function of mass density on surface 𝑆
+    - Its integral: total mass of surface 𝑆
+
+</div>
 
 
 
