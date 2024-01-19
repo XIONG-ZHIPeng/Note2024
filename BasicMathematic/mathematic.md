@@ -792,7 +792,52 @@ characteristic equation
 - In scalar: $\int_S \rho(x,y,z)dS$
   - In the case &rho; is a function of mass density on surface 𝑆
     - Its integral: total mass of surface 𝑆
+- In vector: $\int_S \textbf{v}(x,y,z)\cdot dS$
+  - In the case **v** is a function of liquid velocity on surface S
+    - Its integral: total amount of liquid flow per unit time
+    - ![](vector14.png)
 
+### Volume integral
+- Connect divergence on vector field and flow at the surface
+  - Assume volume 𝑉 surrounded by surface 𝑆
+    - Volume integral of scalar f: $\int_V f(x,y,z)dV$
+    - Volume integral of vector **F**: $\int_V \textbf{F}(x,y,z)dV$
+      - $\int_V \textbf{F}(x, y, z)dV = \textbf{i}\int_V F_1dV + \textbf{j}\int_V F_2 dV + \textbf{k}\int_V F_3 dV$
+- Preliminary
+  - For volume V surrounded by surface S, **n** = &cos; &alpha;**i** + &cos;**j** + &cos;**k**, folowing equation satisfies,
+  - $\int_V \frac{\partial f}{\partial x}dV = \int_S f\cos \alpha dS \\ \int_V \frac{\partial f}{\partial y}dV = \int_S f\cos \beta dS \\ \int_V \frac{\partial f}{\partial z}dV = \int_S f \cos \gamma dS$
+
+### Proof
+- Proof $\int_V \frac{\partial f}{\partial z}dV = \int_S f \cos \gamma dS$
+- Assume two points P~1~, P~2~ on S
+  - z~2~ &ge; z~1~: z~2~ coves upper side of S, z~1~ coves lower side if S
+  - $\int_V \frac{\partial f}{\partial z}dV means volume difference in z-axis, thus$ <img src="vector15.png" align="right" width="150">
+- $\int_V \frac{\partial f}{\partial z}dV = \iiint_V \frac{\partial f}{\partial z}dxdydz = \iint_D{\int^{z_2}_{z_1} \frac{\partial f}{\partial z}dz}dxdy \\ =\iint_D [f]^{z_2}_{z_1} dxdy = \iint_D {f(x,y,z_2) - f(x,y,z_1)}dxdy$
+
+- For z-axis, z~2~ is upper ($dS \cos \gamma = dxdy$), z~1~ is lower thus ($dS \cos \gamma = -dxdy$)
+  - $\iint_D f(x,y,z_2)dxdy = \int_{S_2} f(x,y,z)dS$
+  - $\iint_D f(x,y,z_1)dxdy = -\int_{S_1} f(x,y,z)dS$
+  - $\int_V \frac{\partial f}{\partial z}dV = \int_{S_2}f\cos \gamma dS + \int_{S_1}f\cos \gamma dS \\ = \int_{S}f\cos \gamma dS$
+
+### Divergence theorem(Dauss' theorem)
+- Connect divergence on vector field and flow at the surface  
+  - Assume volume V surrounded bt surface S w/unit vector
+    - $\int_V div \textbf{F}dV = \int_V \nabla \cdot \textbf{F}dV = \int_S \textbf{F}\cdot\textbf{n}dS$ 
+  - Physical meaning
+    - $\int_S \textbf{F}\cdot \textbf{n}: amount of flow which path through the area S$
+    - $\int_V div \textbf{F}dV: amount of flow out$
+    - ![](vector15.PNG)
+### Extension of Gauss' theorem
+- Assume the point 𝑃 on close surface 𝑆 , express vector from origin 𝑂(0, 0, 0) to P as $\stackrel{\rightarrow}{P} = \textbf{r},\textbf{n}$ is unit normal vector of S
+- Following equation satisfy the following
+  - $\int_S \frac{\textbf{r}}{r^3}\cdot \textbf{n}dS = \left\{\begin{aligned} & 0\text{(when O is outside of S)}\\ & 2\pi \text{(when O is on the surface S)}\\ &  4\pi \text{(when O is inside of S)}\end{aligned}\right.$
+  - ![](vector17.PNG)
+
+### Exercise 
+- For function $f(x,y,z) = x^2 - yz + z^2$, calculate its curvilinear integral $\int_C f ds$
+  - Case 1: C is a line from P~1~(1,2,0) to P~2~(1,2,3)
+    - $\int_C fds = \int^3_0(1^2 - 2z + z^2)dz = {[z-z^2 + \frac{z^3}{3}]}^3_0 = 3$
+  - Case 2: C is a line
 </div>
 
 
