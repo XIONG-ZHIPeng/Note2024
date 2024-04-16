@@ -1,0 +1,28 @@
+Below is a list of frequent remarks on presentation slides. Please check your slides before practice.
+
+Title and authors. For final and midterm exam, your sole name appears in the first slide. However, for external presentation (conferences, DEIM forum..), all the author names must be shown.
+Spend 1-2min for each slide. 20 - 25 slides are good for 15min presentation. 40 slides are too many.
+Select topics carefully. Give priorities on what you need to explain. Details of lower priorities can be omitted. You do not have to present all of your work.
+Give an appropriate title to each slide. Audience pay attention to slide tiles to understand your topic. Avoid same tiles like "Proposing methods" continuing over 3+ slides. Change the title at every slide.
+Figures and tables. Figures and tables attract more attention of audience than texts. To explain important parts of figures and tables, add symbols and words directly on them. Use coloring.
+Graphs and charts. Clearly show X- and Y-axis names. Never forget units. Also, show legends, coloring, with sufficiently large fonts. Better add text message in the graph about what you want to explain.
+Use large fonts.
+Short sentence. Do not use long sentences in slides. Reduce words. Use itemization like "*", "1,2,3". Essential phrases only. Never write a sentence stretching over 3+ lines.
+Spelling and grammar. Do spell check and grammar check. Such errors are quite harming your impression. Use tools like grammarly.com.
+Spend first 2-3 min for backgrounds. Emphasize how your research is important in the society, and what applications your research have.
+Introduction. Explain the background of your research. In which area your research can be used? Why the research area of your topic is active? These are necessary to appeal the value of your work, but often forgotten by students who talk only about what they did.
+Introduction. In Introduction, list up your research goals, and summary of your results. If your results are not sufficient, indicate what state you have reached.
+Motivating example. In Introduction, show a compact realistic motivating example that your research is dealing with. The audience can understand the nature of your problem through examples.
+Related work. Pick up most relevant papers, and clarify what differences your research has.
+Page number. Add page numbers. Page numbers are used by audience in requesting a slide.
+Copyright. If you borrow a picture or figure of others, show its author(s) or source (URI) at the footnote. If a table cotains results borrowed from a paper, add the reference of the paper. If no such reference is show, it is reagded that you produced all the results, which constitutes plagiarism.
+Evaluation. In evaluation results, clarify which one is your proposing method, and which one is the baseline or existing method.
+White space. A white space is necessary, after periods and commas.
+Correct:  As shown here,  it is
+Wrong:    As shown here,it is
+Also,  a whitespace is necessary in front of citations "[]"
+Correct:  word2vec [1]
+wrong:    wrod2vec[1]
+Emphasis. When one slide contains several figures and/or tables, or many text lines, you may explain them one-by-one. But audience can easily loose which part you are currently explaining. To avoid this, use a laser pointer to indicate the part you are talking, or use animation pop-up and/or highlighting boxes etc, to clarify where you are.
+Conclusion. Restate your research goal, and which points are unique or new. Then write what results you obtained. Works need to be done should be written in Future work.
+At last. Do not need a "thank you for listening" slide. Instead, stop at the conclusion slide.
