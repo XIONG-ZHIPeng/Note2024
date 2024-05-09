@@ -86,6 +86,7 @@ For simplicity, $$p_{\theta}^{prompt}(output|input) = p_{\theta}^{prompt}(output
 So, IO prompting: $y \sim p_{\theta}^{IO}(y|x)$
 
 <dl>
+  <dt>Chain-of-thought (CoT) prompting</dt>
 </dl>
 
 </div>
