@@ -6,6 +6,6 @@
 
 | Author Name | |
 | - | - |
-| Shunyu Yao | Princeton UniversitySS |
+| Shunyu Yao | Princeton University |
 
 </div>
