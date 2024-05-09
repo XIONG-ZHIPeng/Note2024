@@ -88,5 +88,13 @@ So, IO prompting: $y \sim p_{\theta}^{IO}(y|x)$
 <dl>
   <dt>Chain-of-thought (CoT) prompting</dt>
 </dl>
+was proposed to address cases where the mapping of input x to output y is non-trivial (e.g. when x is a math question and y is the final numerical answer).
+
+<dl>
+  <dt>Self-consistency with CoT (CoT-SC)</dt>
+</dl>
+
+is an ensemble approach that samples k i.i.d.chains of thought: 
+$[z_{1...n}^{i},y^{(i)}] \sim p_{\theta}^{CoT}(z_{1...n},y|x)(i=1...k)$
 
 </div>
