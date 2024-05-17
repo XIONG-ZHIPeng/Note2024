@@ -25,6 +25,7 @@
     - [Task Overview](#task-overview)
     - [Results](#results)
   - [Background](#background)
+  - [Method](#method-1)
 
 ## Abstract
 
@@ -50,6 +51,8 @@ Unable to tackle tasks that require exploration, strategic lookahead, or where i
 ### Motivation
 
 1. The mechanism used for wide range of tasks, such as, requiring mathematical, symbolic, commonsense, and knowledge reasoning, is still the original **autoregressive mechanism**, which makes token-level decisions one by one and in a left-to-right fashion. 
+   1. Locally, they do not explore different continuations within a thought process
+   2. Globally, they do not incorporate any type of planning, lookahead, or backtracking to help evaluate these different options – the kind of heuristic-guided search that seems characteristic of human problem-solving.
 2. Research on “dual process” models suggests that people have two modes in which they engage with decisions – a fast, automatic, unconscious mode (“System 1”) and a slow, deliberate, conscious mode (“System 2”).
 
 ### Method
@@ -96,5 +99,17 @@ was proposed to address cases where the mapping of input x to output y is non-tr
 
 is an ensemble approach that samples k i.i.d.chains of thought: 
 $[z_{1...n}^{i},y^{(i)}] \sim p_{\theta}^{CoT}(z_{1...n},y|x)(i=1...k)$
+
+## Method
+<dl>
+  <dt>Tree of Thought</dt>
+  <dd>a paradigm that allows LMs to explore multiple reasoning paths over thoughts</dd>
+</dl>
+
+**Answer four questions**
+1. How to decompose the intermediate process into thought steps
+2. How to generate potential thoughts from each state
+3. How to heuristically evaluate states
+4. What search algorithm to use
 
 </div>
