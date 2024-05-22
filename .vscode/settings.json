@@ -1,0 +1,10 @@
+{
+    "workbench.colorTheme": "Visual Studio Dark",
+    "workbench.preferredDarkColorTheme": "Visual Studio Dark",
+    "workbench.preferredHighContrastColorTheme": "Visual Studio Dark",
+    "workbench.preferredHighContrastLightColorTheme": "Visual Studio Dark",
+    "workbench.preferredLightColorTheme": "Visual Studio Dark",
+    "window.autoDetectColorScheme": true,
+    "markdown-preview-github-styles.colorTheme": "dark",
+    "markdown-preview-github-styles.lightTheme": "dark"
+}
