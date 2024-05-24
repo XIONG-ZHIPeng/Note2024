@@ -102,13 +102,27 @@ Essentially, the physical schema summarizes how the relations described in the c
 <dl>
 <dt>Data independence</dt>
 <dd>application programs are insulated from changes in the way the data is structured and stored</dd>
+
+<dt>Transaction</dt>
+<dd>any one execution of a user program in a DBMS.</dd>
 </dl>
 
 ![](./Images/Q6_1.png)
+![](./Images/Q6_2.png)
+![](./Images/Q6_3.png)
+![](./Images/Q6_4.png)
+
+A crucial property of the log is that each write action must be recorded in the log (on disk) before the corresponding change is reflected in the database itself—otherwise, if the system crashes just after making the change in the database but before the change is recorded in the log, the DBMS would be unable to detect and undo this change.
+This property is called **Write-Ahead Log**, or **WAL**.
+
+![](./Images/Q6_5.png)
 
 ## What are the main components of a DBMS?
 
+![](./Images/Q7.png)
+
 ## Who is involved with databases in real life?
 
-
+![](./Images/Q8.png)
+![](./Images/Summary.png)
 </div>
