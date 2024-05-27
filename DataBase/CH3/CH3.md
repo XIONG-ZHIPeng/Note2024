@@ -33,7 +33,7 @@ A relation consists of a **relation schema** and a **relation instance**. The re
 
 - The schema specifies the relation’s name, the name of each **field** (or **column**, or **attribute**), and the **domain** of each field. 
   - A domain is referred to in a relation schema by the **domain name** and has a set of associated **values**. We use the example of student information in a university database to illustrate the parts of a relation schema: 
-  - $ Student(sid:\textbf{string}, name:\textbf{string}, login: \textbf{string}, age:\textbf{integer},gpa:\textbf{real}) $
+  - $Student(sid:\textbf{string}, name:\textbf{string}, login: \textbf{string}, age:\textbf{integer},gpa:\textbf{real})$
   - This says, for instance, that the field named *sid* has a domain named **string**. The set of values associated with domain **string** is the set of all character strings. An **instance** of a relation is a set of **tuples**, also called **records**, in which each tuple has the same number of fields as the relation schema.
  ![](./Images/Figure3_1.png)
 - ![](./Images/Q1_1.png)

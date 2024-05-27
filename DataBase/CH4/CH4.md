@@ -39,7 +39,7 @@ The inputs and outputs of a query are relations. A query is evaluated using *ins
 ### Selection and Projection
 
 ![](./Images/Q3.png)
-The projection operator &pi; allows us to extract columns from a relation; for example, we can find out all sailor names and ratings by using &pi;.
+The projection operator $\pi$ allows us to extract columns from a relation; for example, we can find out all sailor names and ratings by using $\pi$.
 ![](./Images/Q3_2.png)
 
 The important point to note is that, although three sailors are aged 35, a single tuple with age=35.0 appears in the result of the projection. This follows from the definition of a relation as a set of tuples. In practice, real systems often omit the expensive step of eliminating duplicate tuples, leading to relations that are multisets.
@@ -49,18 +49,18 @@ The important point to note is that, although three sailors are aged 35, a singl
 
 The following standard operations on sets are also available in relational algebra: $union\ (\cup), intersection\ (\cap), set-difference\ (-), and\ cross-product\ (\times)$
 
-- **Union:** R &cup; S returns a relation instance containing all tuples that occur in *either* relation instance R or relation instance S (or both). R and S must be *union-compatible*, and the schema of the result is defined to be identical to the schema of R. <br> Two relation instances are said to be union-compatible if the following conditions hold: <br> 1. they have the same number of the fields, and <br> 2. corresponding fields, taken in order from left to right, have the same *domains*. <br> Note that field names are not used in defining union-compatibility. For convenience, we will assume that the fields of R ∪ S inherit names from R, if the fields of R have names. (This assumption is implicit in defining the schema of R ∪ S to be identical to the schema of R, as stated earlier.)
-- **Intersection:** R ∩ S returns a relation instance containing all tuples that occur in both R and S. The relations R and S must be union-compatible, and the schema of the result is defined to be identical to the schema of R.
+- **Union:** R $\cup$ S returns a relation instance containing all tuples that occur in *either* relation instance R or relation instance S (or both). R and S must be *union-compatible*, and the schema of the result is defined to be identical to the schema of R. <br> Two relation instances are said to be union-compatible if the following conditions hold: <br> 1. they have the same number of the fields, and <br> 2. corresponding fields, taken in order from left to right, have the same *domains*. <br> Note that field names are not used in defining union-compatibility. For convenience, we will assume that the fields of $\cup$ inherit names from R, if the fields of R have names. (This assumption is implicit in defining the schema of R $\cup$ S to be identical to the schema of R, as stated earlier.)
+- **Intersection:** R $\cap$ S returns a relation instance containing all tuples that occur in both R and S. The relations R and S must be union-compatible, and the schema of the result is defined to be identical to the schema of R.
 - **set-difference:** R−S returns a relation instance containing all tuples that occur in R but not in S. The relations R and S must be union-compatible, and the schema of the result is defined to be identical to the schema of R.
 
 ![](./Images/Q3_3.png)
 
 
-- **Cross-product:** R × S returns a relation instance whose schema contains all the fields of R (in the same order as they appear in R) followed by all the fields of S (in the same order as they appear in S). The result of R × S contains one tuple r, s (the concatenation of tuples r and s) for each pair of tuples r ∈ R, s ∈ S. The cross-product opertion is sometimes called **Cartesian product**. <br> We use the convention that the fields of R × S inherit names from the corresponding fields of R and S. It is possible for both R and S to contain one or more fields having the same name; this situation creates a naming conflict. The corresponding fields in R × S are unnamed and are referred to solely by position.
+- **Cross-product:** R × S returns a relation instance whose schema contains all the fields of R (in the same order as they appear in R) followed by all the fields of S (in the same order as they appear in S). The result of R × S contains one tuple r, s (the concatenation of tuples r and s) for each pair of tuples r $\in$ R, s $\in$ S. The cross-product opertion is sometimes called **Cartesian product**. <br> We use the convention that the fields of R × S inherit names from the corresponding fields of R and S. It is possible for both R and S to contain one or more fields having the same name; this situation creates a naming conflict. The corresponding fields in R × S are unnamed and are referred to solely by position.
 
 ![](./Images/Q3_4.png)
 
-renaming operator ρ.
+renaming operator $\rho$.
 
 ### Join
 
@@ -68,7 +68,7 @@ The most general version of the join operation accepts a join condition c and a 
 
 $$R \bowtie_c S = \sigma_c (R \times S)$$
 
-Thus &bowtie; is defined to be a cross-product followed by a selection. Note that the condition c can (and typically does) refer to attributes of both R and S. The reference to an attribute of a relation, say, R, can be by position (of the form R.i) or by name (of the form R.name).
+Thus $\bowtie$ is defined to be a cross-product followed by a selection. Note that the condition c can (and typically does) refer to attributes of both R and S. The reference to an attribute of a relation, say, R, can be by position (of the form R.i) or by name (of the form R.name).
 
 ![](./Images/Q3_5.png)
 ![](./Images/Q3_6.png)
@@ -102,7 +102,7 @@ Thus &bowtie; is defined to be a cross-product followed by a selection. Note tha
 
 A tuple relational calculus query has the form { T | p(T) }, where T is a tuple variable and p(T ) denotes a formula that describes T.
 (Q11) Find all sailors with a rating above 7.
-*{S | S ∈ Sailors ∧ S.rating > 7}*
+${S | S ∈ Sailors ∧ S.rating > 7}$
 
 
 ### Domain Relational Calculus
@@ -120,7 +120,7 @@ A tuple relational calculus query has the form { T | p(T) }, where T is a tuple 
 ![](./Images/DRC4.png)
 ![](./Images/DRC5.png)
 ![](./Images/DRC6.png)
-This query can be read as follows: “Find all values of N such that some tuple <I, N, T, A> in Sailors satisfies the following condition: For every B, BN, C , either this is not a tuple in Boats or there is some tuple Ir, Br, D in Reserves that proves that Sailor I has reserved boat B.” The ∀ quantifier allows the domain variables B, BN , and C to range over all values in their respective attribute domains, and the pattern ‘¬( B, BN, C ∈ Boats)∨’ is necessary to restrict attention to those values that appear in tuples of Boats.
+This query can be read as follows: “Find all values of N such that some tuple <I, N, T, A> in Sailors satisfies the following condition: For every B, BN, C , either this is not a tuple in Boats or there is some tuple Ir, Br, D in Reserves that proves that Sailor I has reserved boat B.” The $\forall$ quantifier allows the domain variables B, BN , and C to range over all values in their respective attribute domains, and the pattern ‘$\neg$( B, BN, C $\in$ Boats)V’ is necessary to restrict attention to those values that appear in tuples of Boats.
 ![](./Images/DRC7.png)
 
 ![](./Images/Safe.png)
