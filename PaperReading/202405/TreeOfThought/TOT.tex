@@ -89,7 +89,7 @@ Given a tree state $s = [x,z_1...i]$, this paper consider two strategies to gene
         \subitem \textbf{Value} each state independently: $V(p_{\theta},S)(s) \sim p^{value}_{\theta}(v|s) \forall s \in S$, where a value prompt reasons about the state s to generate a scalar value v
             or a classification (e.g. sure/likely/impossible) that could be heuristically turned into a value.
         \subitem \textbf{Vote} across states: $V(p_{\theta},S) = 1 [s = s^{*}]$, where a “good” state $s^* \sim p_{\theta}^{vote}(s^*|S)$ is voted out based on deliberately comparing different states in S in a vote prompt.
-    \item \textbf{Search algorithm.} BFS and DFS
+    \item \textbf{Search algorithm.} BFS and DFShe
 \end{itemize}
 
 \begin{table}[H]
