@@ -1,0 +1,60 @@
+\documentclass{article}
+
+% Packages
+\usepackage{amsmath} % For mathematical symbols and equations
+\usepackage{amssymb} % For additional mathematical symbols
+\usepackage{graphicx} % For including images
+\usepackage{hyperref} % For hyperlinks
+
+% Title and author
+\title{Note On "Mechanism Design for Large Language Models"}
+\author{Paul Duetting, Vahab Mirrokni, Renato Paes Leme, Haifeng Xu, and Song Zuo}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+For application in ads, consider making LLM produce joint ads for multiple products.
+
+\subsection*{Challenges}
+
+\begin{itemize}
+    \item \textbf{Modelling and Expressing Preferences:} In auction models, there usually exist value functions 
+    that can assign a value to each outcome. However, as generative models, LLMs don't attribute values to each
+    example, but rather succinctly encode perferences over outcomes in a stateless neural network model that predicts
+    continuation probabilities.
+    \item \textbf{Necessity of Randomization:} LLMs typically have a worse performance, when forced to output deterministically,
+    than if they are allowed to sample from a distribution. Therefore, an auction that aggregates LLM outputs 
+    must also output distributions.
+    \item \textbf{Technical Alignment:} Auction solutions should be technically aligned with current LLM technology.
+    \item \textbf{Computational Efficiency:} LLM models are expensive to query, so the auction computation should not add too much overhead.
+    
+\end{itemize}
+
+
+\subsection*{Contributions}
+
+\textbf{The token Auction Model.} The first contribution is a formalism("The Token Auction Model") for studying this 
+problem. The \textit{token auction} this paper proposes operates on a token-by-token basis, and serves to aggregate several LLMs to generate a joint output.
+
+
+\textbf{Simple and Robust Token Auctions:} In order to design \textit{robust token auctions}, formulate two desirable 
+incentive properties, which this paper consider minimal requirements:
+
+\begin{itemize}
+    \item \textit{Payment monotonicity:} Given two different bids for the same agent, a final distribution is closer to the desired distribution if and only if the payment is higher.
+    \item \textit{Consistent aggregation:} If for two different bids of the same agent, the final distribution is closer to the preferred distribution for some bids of the other agents, then it should be so for all bids of the other agents.
+\end{itemize}
+% Your content goes here
+
+\section{Main Body}
+
+% Your content goes here
+
+\section{Conclusion}
+
+% Your content goes here
+
+\end{document}
