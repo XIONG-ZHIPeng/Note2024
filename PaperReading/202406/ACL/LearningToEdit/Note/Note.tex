@@ -1,4 +1,6 @@
 \documentclass{article}
+\usepackage{graphicx}
+\usepackage{float}
 
 \title{Note on [Learning to Edit: Aligning LLMs with Knowledge Editing]}
 \author{NoteAuthor: XIONG ZHIPENG}
@@ -23,9 +25,30 @@ modifies the response to "\textit{Who is married to the PM of the UK?}"
 The dynamic nature of the world  necessitates frequent updates to LLMs to rectify outdated information 
 or integrate new knowledge, thereby safeguarding their sustained pertinence.
 
-This paper 
+This paper argues that the previous methods predominantly rely on memorizing 
+the update.
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{./../Images/Figure1.png}
+    \caption{The previous and proposed principles}
+\end{figure}
 
 \section{How is it solved?}
+\textbf{Two phases}
+\begin{itemize}
+    \item \textbf{Alignment Phase:} train LLMs how to apply updated knowledge
+    \item \textbf{Inference Phase:} propose a retrieval-based mechanism that retrieves relevant edit descriptors from a stored memory for real-time, mass editing requests.
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{./../Images/Figure2.png}
+    \caption{The proposed feamework}
+\end{figure}
+
 
 \section{DataAnalysis, Applications, Conclusion and Future Work}
 
