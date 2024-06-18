@@ -1,0 +1,111 @@
+\documentclass{article}
+
+
+% Title
+\title{Database Report}
+\author{XIONG Zhipeng \  Sid: 44231536}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Question 1}
+For each of the above query descriptions Q1, Q2, Q3, generate SQL queries by
+using ChatGPT. Show the generated queries.
+
+\begin{itemize}
+    \item Q1: Find mid of menuitems such that the number of guests who ordered the menuitem
+    only once is maximum. Report such mid and the maximum number of guests.
+    \begin{verbatim}
+        WITH GuestOrderCount AS (
+            SELECT o.mid, o.gid, COUNT(*) AS order_count
+            FROM Order o
+            GROUP BY o.mid, o.gid
+        ),
+        MenuItemGuestCount AS (
+            SELECT mid, COUNT(gid) AS guest_count
+            FROM GuestOrderCount
+            WHERE order_count = 1
+            GROUP BY mid
+        )
+        SELECT mid, guest_count
+        FROM MenuItemGuestCount
+        ORDER BY guest_count DESC
+        LIMIT 1;        
+    \end{verbatim}
+    \item Q2:  Find guests who always order an item that is most expensive within the table.
+    \begin{verbatim}
+        -- Step 1: Identify the most expensive menu item
+        WITH MostExpensiveItem AS (
+            SELECT mid, price
+            FROM MenuItem
+            WHERE price = (SELECT MAX(price) FROM MenuItem)
+        ),
+
+        -- Step 2: Find guests who have only ordered the most expensive item
+        GuestOrders AS (
+            SELECT gid
+            FROM Order
+            WHERE mid IN (SELECT mid FROM MostExpensiveItem)
+            GROUP BY gid
+            HAVING COUNT(DISTINCT mid) = (SELECT COUNT(*) FROM MostExpensiveItem)
+        ),
+
+        -- Step 3: Ensure these guests have not ordered any other items
+        GuestValid AS (
+            SELECT go.gid
+            FROM GuestOrders go
+            LEFT JOIN Order o ON go.gid = o.gid
+            LEFT JOIN MostExpensiveItem mei ON o.mid = mei.mid
+            GROUP BY go.gid
+            HAVING COUNT(DISTINCT o.mid) = COUNT(DISTINCT mei.mid)
+        )
+
+        -- Step 4: Select the guests who meet the criteria
+        SELECT g.gid, g.tableid
+        FROM Guest g
+        JOIN GuestValid gv ON g.gid = gv.gid;
+    \end{verbatim}
+    \item Q3: Find the golden guest pair such that their total amount in two visits is maximum
+    than any other guest pairs. Guest pairs are any two guests coming on the same day
+    and occupy one table by the two.
+    \begin{verbatim}
+        WITH GuestVisitAmount AS (
+            SELECT
+                g1.gid AS gid1,
+                g2.gid AS gid2,
+                g1.tableid,
+                o1.date,
+                SUM(o1.quantity * m1.price) AS amount1,
+                SUM(o2.quantity * m2.price) AS amount2,
+                SUM(o1.quantity * m1.price) + SUM(o2.quantity * m2.price) AS total_amount
+            FROM
+                Guest g1
+                JOIN Guest g2 ON g1.tableid = g2.tableid AND g1.gid < g2.gid
+                JOIN Order o1 ON g1.gid = o1.gid
+                JOIN Order o2 ON g2.gid = o2.gid AND o1.date = o2.date
+                JOIN MenuItem m1 ON o1.mid = m1.mid
+                JOIN MenuItem m2 ON o2.mid = m2.mid
+            GROUP BY
+                g1.gid, g2.gid, g1.tableid, o1.date
+        ),
+
+        MaxTotalAmount AS (
+            SELECT
+                gid1, gid2, total_amount
+            FROM
+                GuestVisitAmount
+            ORDER BY
+                total_amount DESC
+            LIMIT 1
+        )
+
+        SELECT
+            mta.gid1, mta.gid2, mta.total_amount
+        FROM
+            MaxTotalAmount mta;
+    \end{verbatim}
+\end{itemize}
+
+\end{document}
