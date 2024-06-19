@@ -1,1 +1,6 @@
 note/
+Course/DataBase/Report/SQLChatGPTreport24/report/*.aux
+Course/DataBase/Report/SQLChatGPTreport24/report/*.log
+Course/DataBase/Report/SQLChatGPTreport24/report/*.fdb_latexmk
+Course/DataBase/Report/SQLChatGPTreport24/report/*.fls
+Course/DataBase/Report/SQLChatGPTreport24/report/*.synctex.gz

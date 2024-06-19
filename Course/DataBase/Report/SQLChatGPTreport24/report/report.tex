@@ -79,7 +79,8 @@ using ChatGPT. Show the generated queries.
                 o1.date,
                 SUM(o1.quantity * m1.price) AS amount1,
                 SUM(o2.quantity * m2.price) AS amount2,
-                SUM(o1.quantity * m1.price) + SUM(o2.quantity * m2.price) AS total_amount
+                SUM(o1.quantity * m1.price) + SUM(o2.quantity * m2.price) 
+                    AS total_amount
             FROM
                 Guest g1
                 JOIN Guest g2 ON g1.tableid = g2.tableid AND g1.gid < g2.gid
@@ -106,6 +107,162 @@ using ChatGPT. Show the generated queries.
         FROM
             MaxTotalAmount mta;
     \end{verbatim}
+\end{itemize}
+
+\section*{Question 2}
+For the queries generated from Q1, Q2, Q3.
+\subsection*{(2-1)}
+Argue whether each generated query is correctly expressing its query
+description. Construct a table instance for explaining your answer. If the
+generated query is wrong, point out its errors, and show a correct SQL query
+that returns the expected answer for the query description.
+
+\begin{itemize}
+    \item For Q1, the generated query is correct. 
+    \subitem \textbf{GuestOrderCount} table instance:  Calculate the number of times each guest has ordered each menu item. It groups the orders by `mid' and `gid' and counts the number of orders for each combination.
+    \subitem \textbf{MenuItemGuestCount} table instance: Filter the results to include only those guests who ordered a menu item exactly once.
+    \subitem The final part of the query selects the `mid' with the maximum count of guests who ordered the menu item exactly once.
+    \item For Q2, the generated query is incorrect. The logic of the generated query is 
+    to find the guests who have only ordered the most expensive item. However, guests who 
+    always order an item that is most expensive within the table don't necessarily have to 
+    order the most expensive item only. The correct query should be:
+    \begin{verbatim}
+        WITH GuestMaxPrice AS (
+            SELECT 
+                g.gid,
+                g.tableid,
+                o.date,
+                MAX(m.price) AS max_price
+            FROM 
+                Guest g
+                JOIN Order1 o ON g.gid = o.gid
+                JOIN MenuItem m ON o.mid = m.mid
+            GROUP BY 
+                g.gid, g.tableid, o.date
+        ),
+
+        TableMaxPrice AS (
+            SELECT 
+                g.tableid,
+                o.date,
+                MAX(m.price) AS max_price
+            FROM 
+                Guest g
+                JOIN Order1 o ON g.gid = o.gid
+                JOIN MenuItem m ON o.mid = m.mid
+            GROUP BY 
+                g.tableid, o.date
+        ),
+
+        ConsistentMaxPriceGuests AS (
+            SELECT 
+                gmp.gid,
+                gmp.tableid,
+                gmp.date
+            FROM 
+                GuestMaxPrice gmp
+                JOIN TableMaxPrice tmp ON 
+                 gmp.tableid = tmp.tableid AND gmp.date = tmp.date
+            WHERE 
+                gmp.max_price = tmp.max_price
+        ),
+
+        EligibleGuests AS (
+            SELECT 
+                gid
+            FROM 
+                ConsistentMaxPriceGuests
+            GROUP BY 
+                gid
+            HAVING 
+                COUNT(*) = (SELECT COUNT(*) FROM GuestMaxPrice 
+                    WHERE gid = ConsistentMaxPriceGuests.gid)
+        )
+
+        SELECT 
+            g.gid,
+            g.tableid
+        FROM 
+            Guest g
+        JOIN 
+            EligibleGuests eg ON g.gid = eg.gid;
+    \end{verbatim}
+    \item For Q3, the generated query is incorrect. The code only select the guest pair who 
+    have the maximum total amount in one visit. 
+    \begin{verbatim}
+        WITH GuestVisitAmounts AS (
+            SELECT 
+                g.gid,
+                g.tableid,
+                o.date,
+                SUM(o.quantity * m.price) AS total_amount
+            FROM 
+                Guest g
+                JOIN Order1 o ON g.gid = o.gid
+                JOIN MenuItem m ON o.mid = m.mid
+            GROUP BY 
+                g.gid, g.tableid, o.date
+        ),
+
+        GuestPairs AS (
+            SELECT 
+                gva1.gid AS gid1,
+                gva2.gid AS gid2,
+                gva1.tableid,
+                gva1.date,
+                gva1.total_amount AS amount1,
+                gva2.total_amount AS amount2,
+                gva1.total_amount + gva2.total_amount AS combined_amount
+            FROM 
+                GuestVisitAmounts gva1
+                JOIN GuestVisitAmounts gva2 
+                    ON gva1.tableid = gva2.tableid 
+                    AND gva1.date = gva2.date 
+                    AND gva1.gid < gva2.gid
+        ),
+
+        TotalAmountsByPair AS (
+            SELECT 
+                gid1, 
+                gid2, 
+                SUM(combined_amount) AS total_combined_amount
+            FROM 
+                GuestPairs
+            GROUP BY 
+                gid1, gid2
+        ),
+
+        MaxTotalAmountPair AS (
+            SELECT 
+                gid1, 
+                gid2, 
+                total_combined_amount
+            FROM 
+                TotalAmountsByPair
+            ORDER BY 
+                total_combined_amount DESC
+            LIMIT 1
+        )
+
+        SELECT 
+            mtap.gid1, 
+            mtap.gid2, 
+            mtap.total_combined_amount
+        FROM 
+            MaxTotalAmountPair mtap;
+    \end{verbatim}
+\end{itemize}
+
+\subsection*{(2-2)}
+Revise the natural language prompt so that the correct SQL query or its
+equivalent query, for the query description is generated.
+\begin{itemize}
+    \item For Q2, the natural language prompt should be revised as follows:
+    \subitem For the query "Find guests who always order an item that is most expensive within the table.", the targeted guest don't have to order the most expensive menu item. It should be his/her order's price is more expesive than other guest in the same table. And There isn't constraints on data, just table.
+    \item For Q3, the natural language prompt should be revised as follows:
+    \subitem For Query 3:"Find the golden guest pair such that their total amount in two visits is maximum
+    than any other guest pairs. Guest pairs are any two guests coming on the same day
+    and occupy one table by the two.", you need to find the guest pair that their total amount in two visits is maximum rather than comparing with one visit.
 \end{itemize}
 
 \end{document}
