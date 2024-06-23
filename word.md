@@ -1,0 +1,10 @@
+- propagate,spread, promotion
+- confront, cope with, deal with
+- auxiliary,supplementary,substitute
+- leverage
+- synthetic, artificial, 
+- resemble,
+- exemplify,
+- canonical, 
+- alleviate,
+- disparity
