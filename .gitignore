@@ -1,6 +1,5 @@
 note/
-benchmarks/hotpot/
-benchmarks/GrailQA/
+benchmarks/
 Course/DataBase/Report/SQLChatGPTreport24/report/*.aux
 Course/DataBase/Report/SQLChatGPTreport24/report/*.log
 Course/DataBase/Report/SQLChatGPTreport24/report/*.fdb_latexmk
