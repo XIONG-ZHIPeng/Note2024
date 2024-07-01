@@ -1,4 +1,4 @@
-5/5 2/6 3/6
+5/5 2/6 3/6 3/5 2/6
 - enormous
 - versatile
   - If you say that a person is versatile, you approve of them because they have many different skills.
@@ -7,4 +7,15 @@
 - in terms of
   - If you talk about something in terms of something or in particular terms, you are specifying which aspect of it you are discussing or from what point of view you are considering it.
     - Synonyms: with regard to, concerning, regarding, as to
-- 
+- heredity
+  - Heredity is the process by which features and characteristics are passed on from parents to their children before the children are born.
+  - Synonyms: genetics, inheritance, genetic make-up, congenital traits
+- vice versa
+  - Vice versa is used to indicate that the reverse of what you have said is true. For example 'people can perform some tasks better than machines can and vice versa' means that machines can perform some tasks better than people can.
+- inconclusive
+  - Synonyms: uncertain, vague, ambiguous, open
+- clumsy
+  - A clumsy person moves or handles things in a careless, awkward way, often so that things are knocked over or broken.
+    - Synonyms: awkward, blundering, bungling, lumbering 
+  - A clumsy action or statement is not skilful or is likely to upset people
+    - Synonyms: awkwardness, ineptitude, heaviness, ineptness 
