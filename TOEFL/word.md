@@ -1,0 +1,5 @@
+- **premonition**
+  - If you have a premonition, you have a feeling that something is going to happen, often something unpleasant.
+  - *Synonyms*: feeling, idea, intuition, suspicion
+- **implausible**
+  - If you describe something as implausible, you believe that it is unlikely to be true.

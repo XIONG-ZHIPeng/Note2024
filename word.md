@@ -8,3 +8,4 @@
 - canonical, 
 - alleviate,
 - disparity
+- scalable, incorporate
