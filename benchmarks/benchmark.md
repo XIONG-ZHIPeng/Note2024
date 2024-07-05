@@ -1,3 +1,5 @@
+TheoremQA, CSQA, TruthfulQA
+
 
 |Datasets| SOTA Model| Link| SOTA Scores | Challenging|
 |--------|-----| ----|----------  | --- |
