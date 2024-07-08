@@ -9,3 +9,35 @@
 - alleviate,
 - disparity
 - scalable, incorporate
+- suffice
+  - If you say that something will suffice, you mean it will be enough to achieve a purpose or to fulfil a need.
+  - suffice it to say
+    - Suffice it to say or suffice to say is used at the beginning of a statement to indicate that what you are saying is obvious, or that you will only give a short explanation.
+- nuance
+  - A nuance is a small difference in sound, feeling, appearance, or meaning
+  - Synonyms: subtlety, degree, distinction, graduation
+- revolutionized
+- vital
+- demonstrate
+  - To demonstrate a fact means to make it clear to people
+    - Synonyms: prove, show, establish, indicate
+  - If you demonstrate a particular skill, quality, or feeling, you show by your actions that you have it.
+    - Synonyms: show, evidence, express, display
+  - When people demonstrate, they march or gather somewhere to show their opposition to something or their support for something.
+    - Synonyms: march, protest, rally, object
+- enhance
+  - To enhance something means to improve its value, quality, or attractiveness.
+    - Synonyms: improve, better, increase, raise
+- conceptualize
+  - If you conceptualize something, you form an idea of it in your mind.
+- incorporate
+  - If one thing incorporates another thing, it includes the other thing.
+    - Synonyms: include, contain, take in, embrace
+  - If someone or something is incorporated into a large group, system, or area, they become a part of it
+    - Synonyms: integrate, include, absorb, unite
+- sophisticate
+- [advent](https://www.collinsdictionary.com/dictionary/english/advent)
+- [survey](https://www.collinsdictionary.com/dictionary/english/survey)
+- [Emergent](https://www.collinsdictionary.com/dictionary/english/emergent)
+- [explore](https://www.collinsdictionary.com/dictionary/english/explore)
+- [categorize](https://www.collinsdictionary.com/dictionary/english/categorize)
