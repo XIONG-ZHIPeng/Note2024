@@ -1,4 +1,4 @@
-2/5 4/6 6/6
+2/5 4/6 6/6 5/5 6/6
 lots of things that are valuable in any career.
 
 - [empiricism](https://www.collinsdictionary.com/dictionary/english/empiricism)

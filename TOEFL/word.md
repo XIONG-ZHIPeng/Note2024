@@ -1,5 +1,36 @@
-- **premonition**
-  - If you have a premonition, you have a feeling that something is going to happen, often something unpleasant.
-  - *Synonyms*: feeling, idea, intuition, suspicion
-- **implausible**
-  - If you describe something as implausible, you believe that it is unlikely to be true.
+- [premonition](https://www.collinsdictionary.com/dictionary/english/premonition): 预感
+- [implausible](https://www.collinsdictionary.com/dictionary/english/implausible): 难以置信
+lots of things that are valuable in any career.
+
+- [empiricism](https://www.collinsdictionary.com/dictionary/english/empiricism): 经验主义
+what berkeley said was that 
+- [perceive](https://www.collinsdictionary.com/dictionary/english/perceive): 感知
+- [apart from](https://www.collinsdictionary.com/dictionary/english/apart-from): 除了
+- [dominant](https://www.collinsdictionary.com/dictionary/english/dominant): 主导的
+- [spontaneous](https://www.collinsdictionary.com/dictionary/english/spontaneous): 自发的
+- [flat](https://www.collinsdictionary.com/dictionary/english/flat): 平坦的
+- [sheer](https://www.collinsdictionary.com/dictionary/english/sheer): 纯粹
+- [appealing](https://www.collinsdictionary.com/dictionary/english/appealing): 有吸引力
+- [compelling](https://www.collinsdictionary.com/dictionary/english/compelling): 引人注目
+- [paleontologist](https://www.collinsdictionary.com/dictionary/english/palaeontology)
+- [exquisite](https://www.collinsdictionary.com/dictionary/english/exquisite): 古生物学家
+- be absent in: 缺席
+- in term of: 在...方面
+- [extraordinary](https://www.collinsdictionary.com/dictionary/english/extraordinary): 非凡的
+- [conceivable](https://www.collinsdictionary.com/dictionary/english/conceivable): 可以想象
+- turn out
+- [extrapolate](https://www.collinsdictionary.com/dictionary/english/extrapolate): 推断
+- [eminent](https://www.collinsdictionary.com/dictionary/english/eminent): 杰出
+- [tremendous](https://www.collinsdictionary.com/dictionary/english/tremendous): 巨大的
+- [destiny](https://www.collinsdictionary.com/dictionary/english/destiny): 命运
+- [retrace](https://www.collinsdictionary.com/dictionary/english/retrace): 回溯
+- [meander](https://www.collinsdictionary.com/dictionary/english/meander): 蜿蜒
+- [enormous](https://www.collinsdictionary.com/dictionary/english/enormous): 巨大的
+- [versatile](https://www.collinsdictionary.com/dictionary/english/versatile): 多才多艺的
+- heredity: 遗传
+- vice versa
+- [inconclusive](https://www.collinsdictionary.com/dictionary/english/inconclusive): 尚无定论
+- [clumsy](https://www.collinsdictionary.com/dictionary/english/clumsy): 笨拙
+- interact with: 与...相互作用
+- [acquisition](https://www.collinsdictionary.com/dictionary/english/acquisition): 获得
+- [intrigue](https://www.collinsdictionary.com/dictionary/english/intrigue): 作名词，阴谋；作动词。引起某人兴趣
