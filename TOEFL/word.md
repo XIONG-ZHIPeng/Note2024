@@ -35,3 +35,4 @@ what berkeley said was that
 - [acquisition](https://www.collinsdictionary.com/dictionary/english/acquisition): 获得
 - [intrigue](https://www.collinsdictionary.com/dictionary/english/intrigue): 作名词，阴谋；作动词。引起某人兴趣
 - sb be on board with sth
+- [recede](https://www.collinsdictionary.com/dictionary/english/recede): 退却
